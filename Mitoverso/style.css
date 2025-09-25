@@ -8,3 +8,36 @@
     width: 1352px;
     height: auto;
 }
+h1{
+    color: rgb(237, 167, 35);
+    margin: 25px;
+    padding: 25px;
+    position: relative;
+    top: -850px;
+    left: 100px;
+}
+
+p {
+    color: rgb(237, 167, 35);
+    text-justify: auto;
+    margin: 5px;
+    position: relative;
+    top: -800px;
+    left: 100px;
+}
+
+.botao {
+    background-color: rgb(112, 195, 221);
+    color: white;
+    font-size: larger;
+    border-radius: 20px;
+    width: 25px;
+    height: 35px;
+    margin: 25px;
+    padding: 20px;
+    text-decoration: none;
+    position: relative;
+    top: -700px;
+    left: 200px;
+}
+
