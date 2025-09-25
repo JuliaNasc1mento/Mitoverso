@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-/*Tela01*/
+/*Tela01 - Página de inicio*/
 .img02{
     width: 1352px;
     height: auto;
@@ -17,7 +17,7 @@ h1{
     left: 100px;
 }
 
-p {
+.p1 {
     color: rgb(237, 167, 35);
     text-justify: auto;
     margin: 5px;
@@ -41,3 +41,8 @@ p {
     left: 200px;
 }
 
+/*Tela 2 - Página principal*/
+.logo {
+    width: 60px;
+    margin: 20px;
+}
