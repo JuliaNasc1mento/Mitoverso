@@ -30,6 +30,7 @@ section {
     filter: brightness(0.5);
 }
 
+
 section h1 {
     color: rgb(237, 167, 35);
     font-size: 4rem;
@@ -75,7 +76,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(20, 20, 40, 0.9);
+    background-color: rgba(20, 20, 40, 0.7);
     padding: 20px 50px;
     position: sticky;
     top: 0;
@@ -136,33 +137,12 @@ nav a:hover {
 }
 
 
-main {
-    padding: 100px 10%;
-    color: white; /* Alterado para branco para contraste com o fundo */
-    background-color: transparent; /* AQUI ESTÁ A CORREÇÃO: Remove o fundo branco */
-}
-
-main h3 {
-    /* Usando a cor de destaque (laranja/dourado) para visibilidade */
-    color: rgb(237, 167, 35);
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-main section:first-child { /* Aplicando apenas à primeira seção de texto */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    backdrop-filter: blur(2px); /* Adiciona um leve desfoque se o fundo for muito detalhado */
-}
-
 /* ============================= */
 /*         RODAPÉ MITOVERSO      */
 /* ============================= */
 
 footer {
-    background-color: rgba(20, 20, 40, 0.95);
+    background-color: rgba(20, 20, 40, 0.7);
     color: white;
     padding: 40px 10%;
     margin-top: 80px;
