@@ -1,2 +1,0 @@
-# Mitoverso
-Projeto integrador - Mitoverso. 

@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url('background.jpg');
+    background-image: url('img/background.jpg');
     background-size: cover;        /* faz a imagem preencher toda a tela */
     background-repeat: no-repeat;  /* evita repetição da imagem */
     background-position: center;   /* centraliza */
