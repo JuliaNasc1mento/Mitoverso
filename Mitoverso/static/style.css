@@ -728,7 +728,7 @@ footer {
     .footer-center li {
         margin-bottom: 8px;
     }
-
+}
     
     .timeline-navigation {
         flex-direction: column;
@@ -739,4 +739,3 @@ footer {
         width: 100%; 
         text-align: center;
     }
-}
