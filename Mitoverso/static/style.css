@@ -382,14 +382,18 @@ section h1 {
 .modal-media-container {
     width: 100%;
     max-height: 400px;
-    overflow: hidden;
+    overflow: auto; /*  permite rolar se a imagem for maior que o modal */
     border-radius: 10px;
+    display: flex;
+    justify-content: flex-start; /*  encosta a imagem no topo */
+    align-items: flex-start;     /*  garante que ela não fique centralizada verticalmente */
 }
 
 .modal-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o container */
+    height: auto;
+    object-fit: contain;  /*  mostra a imagem completa */
+    border-radius: 10px;
 }
 
 .modal-text-container h2 {
@@ -469,11 +473,14 @@ section h1 {
 .content-caos {
     background-image: url('../static/img/O Caus.jpg');
 }
-.content-cronos {
-    background-image: url('../static/img/cronos.jpg');
+.content-urano {
+    background-image: url('../static/img/Queda de Urano.jpg');
+}
+.content-titas {
+    background-image: url('../static/img/Os titãs.jpg');
 }
 .content-zeus {
-    background-image: url('../static/img/zeus.jpg');
+    background-image: url('../static/img/A Ascensão de Zeus.jpg');
 }
 
 audio {
