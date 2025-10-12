@@ -321,6 +321,107 @@ section h1 {
     top: -35px;
 }
 
+/* =================================================== */
+/* MODAL (POP-UP) - TELA DE CONTEÚDO COMPLETO          */
+/* =================================================== */
+
+.modal {
+    /* Escondido por padrão, será mostrado via JavaScript */
+    display: none; 
+    position: fixed; /* Fica fixo sobre o conteúdo */
+    z-index: 200; /* Alto valor para ficar sobre header e footer */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Fundo escuro semi-transparente que cobre a página */
+    background-color: rgba(0, 0, 0, 0.9); 
+    overflow: auto; /* Permite rolar se o conteúdo for muito longo */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex; /* Só aparece quando a classe 'active' for adicionada pelo JS */
+}
+
+.modal-content {
+    background-color: rgba(20, 20, 40, 0.95); /* Fundo do card do modal */
+    margin: auto;
+    padding: 30px;
+    border: 2px solid rgb(135, 68, 197); /* Borda roxa */
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1000px; /* Largura máxima para visualização desktop */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.close-button {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: rgb(237, 167, 35);
+    text-decoration: none;
+}
+
+.modal-media-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o container */
+}
+
+.modal-text-container h2 {
+    color: rgb(237, 167, 35);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.modal-text-container #modalDate {
+    color: rgb(177, 112, 221);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.modal-text-container p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    .modal-media-container {
+        max-height: 250px;
+    }
+}
 
 /* Conteúdo de Texto com Imagem de Fundo */
 .timeline-content {

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitoverso</title>
+    <title>Mitoverso | Linha do Tempo</title>
     <link rel="shortcut icon" href="../static/img/img01.png" type="image/x-icon">
     <link rel="stylesheet" href="../static/style.css">
-</head>
+    </head>
 <body>
     <header>
        <div class="logo-container">
@@ -19,40 +19,50 @@
             <a href="academico.html">Acadêmico</a>
         </nav>
     </header>
-<main class="timeline-container">
+<main>
     <div class="timeline-wrapper">
         <h2 class="timeline-title">Linha do tempo</h2>
         
         <div class="timeline">
             <div class="timeline-event is-top">
-                <div class="timeline-content content-caos" data-bg-image="../static/img/caos.jpg">
+                <div 
+                    class="timeline-content content-caos" 
+                    data-bg-image="../static/img/O Caus.jpg"
+                >
                     <span class="timeline-date">Era Primordial</span>
                     <h3>A Origem: Caos</h3>
                     <p>O vazio primordial. Dele emergiram Gaia e Urano. </p>
-                    <a href="#" class="btn-vermais">Ver Mais</a> 
+                    <a href="#" class="btn-vermais" data-modal-target="modal-caos">Ver Mais</a> 
                 </div>
             </div>
 
             <div class="timeline-event is-bottom">
-                <div class="timeline-content content-cronos" data-bg-image="../static/img/cronos.jpg">
+                <div 
+                    class="timeline-content content-cronos" 
+                    data-bg-image="../static/img/cronos.jpg"
+                >
                     <span class="timeline-date">Ascensão dos Titãs</span>
                     <h3>Queda de Urano</h3>
                     <p>Cronos domina o universo, e a Era dos Titãs se inicia. </p>
-                    <a href="#" class="btn-vermais">Ver Mais</a>
+                    <a href="#" class="btn-vermais" data-modal-target="modal-cronos">Ver Mais</a>
                 </div>
             </div>
 
             <div class="timeline-event is-top">
-                <div class="timeline-content content-zeus" data-bg-image="../static/img/zeus.jpg">
+                <div 
+                    class="timeline-content content-zeus" 
+                    data-bg-image="../static/img/zeus.jpg"
+                >
                     <span class="timeline-date">Olimpo Estabelecido</span>
                     <h3>O Domínio de Zeus</h3>
                     <p>Guerra dos Titãs e o Olimpo se torna a capital. </p>
-                    <a href="#" class="btn-vermais">Ver Mais</a>
+                    <a href="#" class="btn-vermais" data-modal-target="modal-zeus">Ver Mais</a>
                 </div>
             </div>
             
-            </div>
-        </div> <div class="timeline-navigation">
+        </div>
+        
+        <div class="timeline-navigation">
             <a href="index.html" class="nav-button prev-button">
                 &#x2190; Página Inicial
             </a>
@@ -63,9 +73,60 @@
         </div>
         
     </div>    
-    </div>
 </main>
-    </main>
+    
+    <!-- MODAL: CAOS -->
+<div class="modal" id="modal-caos">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        
+        <div class="modal-media-container">
+            <img src="../static/img/O Caus.jpg" alt="Imagem do Caos" class="modal-image">
+        </div>
+        
+        <div class="modal-text-container">
+            <h2>A Origem: Caos</h2>
+            <span id="modalDate">Era Primordial</span>
+            <p>O vazio primordial, a fenda abissal de onde tudo surgiu. Dele nasceram Gaia (Terra) e Urano (Céu). Caos não é apenas ausência, mas a potencialidade ilimitada, o ponto zero da cronologia mitológica e a base de todas as eras seguintes. Este é o texto COMPLETO do evento.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: CRONOS -->
+<div class="modal" id="modal-cronos">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        
+        <div class="modal-media-container">
+            <img src="../static/img/cronos.jpg" alt="Imagem de Cronos" class="modal-image">
+        </div>
+        
+        <div class="modal-text-container">
+            <h2>Queda de Urano</h2>
+            <span id="modalDate">Ascensão dos Titãs</span>
+            <p>Cronos, líder dos Titãs, depôs seu pai Urano. Ele dominou o universo e deu início à Era dos Titãs, um período marcado pelo medo de ser destronado por seus próprios filhos. Este é o texto COMPLETO do evento.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: ZEUS -->
+<div class="modal" id="modal-zeus">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        
+        <div class="modal-media-container">
+            <img src="../static/img/zeus.jpg" alt="Imagem de Zeus" class="modal-image">
+        </div>
+        
+        <div class="modal-text-container">
+            <h2>O Domínio de Zeus</h2>
+            <span id="modalDate">Olimpo Estabelecido</span>
+            <p>Zeus, o filho que Cronos não conseguiu engolir, liderou a Titanomaquia, a guerra que depôs os Titãs. Após a vitória, os Deuses Olímpicos estabeleceram seu domínio, e o Monte Olimpo se tornou a capital celestial. Este é o texto COMPLETO do evento.</p>
+        </div>
+    </div>
+</div>
+
+
     <footer>
     <div class="footer-content">
         <div class="footer-left">
@@ -94,5 +155,6 @@
         <p>© 2025 Mitoverso. Todos os direitos reservados.</p>
     </div>
 </footer>
+<script src="../static/script.js"></script>
 </body>
 </html>
