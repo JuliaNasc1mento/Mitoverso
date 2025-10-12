@@ -468,7 +468,7 @@ section h1 {
 
 /* Injeção das Imagens de Fundo */
 .content-caos {
-    background-image: url('../static/img/caos.jpg');
+    background-image: url('../static/img/O Caus.jpg');
 }
 .content-cronos {
     background-image: url('../static/img/cronos.jpg');
@@ -477,6 +477,12 @@ section h1 {
     background-image: url('../static/img/zeus.jpg');
 }
 
+audio {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: rgba(135, 68, 197, 0.2);
+}
 /* Botão "Ver Mais" e Hover */
 .btn-vermais {
     display: inline-block;
