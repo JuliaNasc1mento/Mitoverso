@@ -147,6 +147,7 @@ section h1 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 50px;
+    width: 100%;
 }
 
 .card-categoria {
@@ -179,6 +180,11 @@ section h1 {
 .card-categoria p {
     font-size: 1rem;
     color: #ccc;
+}
+.card-navigation {
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza o conteúdo (o botão) horizontalmente */
+    padding-top: 50px; /* Adiciona um espaço acima do botão para separá-lo dos cards */
 }
 
 /* =================================================== */
