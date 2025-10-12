@@ -264,7 +264,7 @@ section h1 {
 .timeline-event {
     min-width: 300px; 
     max-width: 300px;
-    margin: 0 40px;
+    margin: 0 5px;
     position: relative;
     transform: translateY(0); 
     scroll-snap-align: start; 
@@ -273,8 +273,8 @@ section h1 {
     flex-shrink: 0; 
 }
 
-.timeline-event:first-child { margin-left: 20%; } 
-.timeline-event:last-child { margin-right: 20%; } 
+.timeline-event:first-child { margin-left: 5%; } 
+.timeline-event:last-child { margin-right: 5%; } 
 
 
 /* ==================== */
