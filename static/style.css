@@ -219,20 +219,17 @@ section h1 {
     display: flex; 
     flex-wrap: nowrap;
     position: relative;
-    
     background-color: transparent;
-    height: 5px; /* Altura de referência da linha */
-    
-    overflow-x: auto; /* A rolagem horizontal interna está aqui */
-    overflow-y: hidden; 
+    min-height: 600px; /* 👈 altura mínima base */
+    height: auto;       /* 👈 deixa crescer conforme o conteúdo */
+    overflow-x: auto;   /* mantém a rolagem lateral */
+    overflow-y: visible; /* 👈 permite crescer verticalmente */
     width: 100%; 
-    
-    /* Espaço vertical para os cards flutuarem */
-    padding: 320px; 
-    
+    padding: 10vh 5%;   /* 👈 padding proporcional à tela, não fixo */
     align-items: center; 
     scroll-snap-type: x mandatory; 
 }
+
 
 /* 1. CRIA A LINHA DE EIXO HORIZONTAL ROXA */
 .timeline::before {
@@ -282,7 +279,7 @@ section h1 {
 
 /* Bloco que fica ACIMA da linha */
 .timeline-event.is-top {
-    transform: translateY(-125px);
+    transform: translateY(-115px);
     margin-top: 0; 
     margin-bottom: 30px;
 }
@@ -415,37 +412,35 @@ section h1 {
 }
 
 /* Conteúdo de Texto com Imagem de Fundo */
+/* ======== TAMANHO PADRÃO DOS CARDS DA TIMELINE ======== */
 .timeline-content {
+    position: relative;
+    width: 280px;           /* 👈 largura fixa */
+    height: 220px;          /* 👈 altura fixa */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(20, 20, 40, 0.95);
-    min-height: 200px; 
-    border-radius: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
-    text-align: left;
-    border: 1px solid rgb(135, 68, 197);
-    transition: border-color 0.3s, box-shadow 0.3s;
-    position: relative; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end; /* texto fica alinhado na parte de baixo */
+    text-align: left;
 }
 
-/* Estilos de Texto */
 .timeline-content h3 {
-    color: rgb(237, 167, 35);
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    text-shadow: 1px 1px 3px #000;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
 }
 
 .timeline-content p {
-    font-size: 1rem;
-    color: white;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 3px #000;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    max-height: 3.9em; /* 👈 impede que o texto “estoure” o card */
+    overflow: hidden;  /* 👈 corta o excesso de texto */
+    text-overflow: ellipsis;
 }
 
 .timeline-date {
@@ -732,7 +727,8 @@ footer {
     }
 
     .timeline {
-        padding: 150px 30px; /* diminui espaço nas laterais e altura */
+        min-height: 700px; /* 👈 cresce um pouco mais em telas pequenas */
+        padding:  100%;
     }
 
     .timeline-event {
@@ -742,13 +738,15 @@ footer {
     }
 
     .timeline-event.is-top {
-        transform: translateY(-70px); /* aproxima da linha */
+        transform: translateY(-115px); /* aproxima da linha */
     }
 
     .timeline-event.is-bottom {
-        transform: translateY(70px);
+        transform: translateY(120px);
     }
-
+    .timeline {
+        padding: 120px 40px; /* ajusta a altura geral */
+    }
     .timeline-content p {
         font-size: 0.9rem;
     }
@@ -815,4 +813,9 @@ footer {
     }
 
 
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* 👈 bloqueia rolagem lateral */
 }
