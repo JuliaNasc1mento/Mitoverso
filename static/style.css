@@ -241,7 +241,7 @@ section h1 {
     height: 3px;
     background-color: rgb(135, 68, 197);
     z-index: 0;
-    width: 400%; 
+    width: 950%; 
 }
 
 /* Estiliza a barra de rolagem horizontal */
@@ -462,10 +462,117 @@ section h1 {
 .content-titas {
     background-image: url('../static/img/Os titãs.jpg');
 }
-.content-zeus {
+.content-cronos-devora {
+    background-image: url('../static/img/');
+}
+.content-titanomaquia {
     background-image: url('../static/img/A Ascensão de Zeus.jpg');
 }
-
+.content-organizacao-olimpicos {
+    background-image: url('../static/img/');
+}
+.content-nascimento-atena {
+    background-image: url('../static/img/');
+}
+.content-apolo-artemis {
+    background-image: url('../static/img/');
+}
+.content-dionisio {
+    background-image: url('../static/img/');
+}
+.content-hefesto {
+    background-image: url('../static/img/');
+}
+.content-hades-persefone {
+    background-image: url('../static/img/');
+}
+.content-pallas-atena {
+    background-image: url('../static/img/');
+}
+.content-prometeu-pandora {
+    background-image: url('../static/img/');
+}
+.content-fundacao-atenas {
+    background-image: url('../static/img/');
+}
+.content-perseu-medusa {
+    background-image: url('../static/img/');
+}
+.content-hercules {
+    background-image: url('../static/img/');
+}
+.content-gigantomaquia {
+    background-image: url('../static/img/');
+}
+.content-jasao-medeia {
+    background-image: url('../static/img/');
+}
+.content-teseu-minotauro {
+    background-image: url('../static/img/');
+}
+.content-ariadne-dionisio {
+    background-image: url('../static/img/');
+}
+.content-belerofonte-quimera {
+    background-image: url('../static/img/');
+}
+.content-apolo-jacinto {
+    background-image: url('../static/img/');
+}
+.content-eros-psique {
+    background-image: url('../static/img/');
+}
+.content-dedalo-icaro {
+    background-image: url('../static/img/');
+}
+.content-circe-scylla {
+    background-image: url('../static/img/');
+}
+.content-sisifo {
+    background-image: url('../static/img/');
+}
+.content-aquiles {
+    background-image: url('../static/img/');
+}
+.content-julgamento-paris {
+    background-image: url('../static/img/');
+}
+.content-preparativos-troia {
+    background-image: url('../static/img/');
+}
+.content-sacrificio-agamemnon {
+    background-image: url('../static/img/');
+}
+.content-principais-batalhas {
+    background-image: url('../static/img/');
+}
+.content-morte-patroclo {
+    background-image: url('../static/img/');
+}
+.content-cavalo-troia {
+    background-image: url('../static/img/');
+}
+.content-consequencias-guerra {
+    background-image: url('../static/img/');
+}
+.content-ulisses-partida {
+    background-image: url('../static/img/');
+}
+.content-ulisses-polifemo {
+    background-image: url('../static/img/');
+}
+.content-ulisses-circe {
+    background-image: url('../static/img/');
+}
+.content-ulisses-submundo {
+    background-image: url('../static/img/');
+}
+.content-ulisses-calipso {
+    background-image: url('../static/img/');
+}
+.content-ulisses-itaca {
+    background-image: url('../static/img/');
+}
 audio {
     width: 100%;
     margin-top: 15px;
