@@ -417,13 +417,53 @@ section h1 {
 
 /* Responsividade do Modal */
 @media (max-width: 768px) {
+    /* MODAL */
     .modal-content {
-        width: 95%;
+        width: 90%;
+        max-width: none;
         padding: 15px;
+        border: 1px solid rgb(135, 68, 197);
+        gap: 15px;
     }
+
     .modal-media-container {
         max-height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
     }
+
+    .modal-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .modal-text-container h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .modal-text-container p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .close-button {
+        font-size: 26px;
+        top: 8px;
+        right: 15px;
+    }
+
+    /* BLOQUEIA SCROLL DE FUNDO QUANDO O MODAL ESTIVER ABERTO */
+    body.modal-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+}
+
 }
 
 /* Conteúdo de Texto com Imagem de Fundo */
