@@ -19,7 +19,6 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    
     /* NOVO: Flexbox para centralizar o conteúdo verticalmente na tela */
     display: flex;
     flex-direction: column;
@@ -415,55 +414,6 @@ section h1 {
     font-size: 1rem;
 }
 
-/* Responsividade do Modal */
-@media (max-width: 768px) {
-    /* MODAL */
-    .modal-content {
-        width: 90%;
-        max-width: none;
-        padding: 15px;
-        border: 1px solid rgb(135, 68, 197);
-        gap: 15px;
-    }
-
-    .modal-media-container {
-        max-height: 250px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .modal-image {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
-    .modal-text-container h2 {
-        font-size: 1.4rem;
-        text-align: center;
-    }
-
-    .modal-text-container p {
-        font-size: 0.95rem;
-        text-align: justify;
-    }
-
-    .close-button {
-        font-size: 26px;
-        top: 8px;
-        right: 15px;
-    }
-
-    /* BLOQUEIA SCROLL DE FUNDO QUANDO O MODAL ESTIVER ABERTO */
-    body.modal-open {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-    }
-}
-
 /* Conteúdo de Texto com Imagem de Fundo */
 .timeline-content {
     background-size: cover;
@@ -780,8 +730,89 @@ footer {
         gap: 20px;
         padding: 50px 10% 0 10%; 
     }
+
+    .timeline {
+        padding: 150px 30px; /* diminui espaço nas laterais e altura */
+    }
+
+    .timeline-event {
+        min-width: 240px;
+        max-width: 240px;
+        margin: 0 10px; /* deixa os blocos mais juntinhos no celular */
+    }
+
+    .timeline-event.is-top {
+        transform: translateY(-70px); /* aproxima da linha */
+    }
+
+    .timeline-event.is-bottom {
+        transform: translateY(70px);
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-date {
+        font-size: 0.7rem;
+    }
+
     .nav-button {
         width: 100%; 
         text-align: center;
     }
+          
+
+    /* Responsividade do Modal */
+    /* MODAL */
+    .modal-content {
+        width: 90%;
+        max-width: none;
+        padding: 15px;
+        border: 1px solid rgb(135, 68, 197);
+        gap: 15px;
+    }
+
+    .modal-media-container {
+        max-height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .modal-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .modal-text-container h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .modal-text-container p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .close-button {
+        font-size: 26px;
+        top: 8px;
+        right: 15px;
+    }
+
+    /* BLOQUEIA SCROLL DE FUNDO QUANDO O MODAL ESTIVER ABERTO */
+    body.modal-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
+
 }
