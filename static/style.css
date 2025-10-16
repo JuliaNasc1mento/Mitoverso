@@ -228,6 +228,7 @@ section h1 {
     padding: 10vh 5%;   /* 👈 padding proporcional à tela, não fixo */
     align-items: center; 
     scroll-snap-type: x mandatory; 
+    
 }
 
 
@@ -286,7 +287,7 @@ section h1 {
 
 /* Bloco que fica ABAIXO da linha */
 .timeline-event.is-bottom {
-    transform: translateY(125px);
+    transform: translateY(120px);
     margin-top: 30px;
     margin-bottom: 0; 
 }
@@ -348,8 +349,8 @@ section h1 {
     padding: 30px;
     border: 2px solid rgb(135, 68, 197); /* Borda roxa */
     border-radius: 15px;
-    width: 90%;
-    max-width: 1000px; /* Largura máxima para visualização desktop */
+    width: 45%;
+    max-width: 100%; /* Largura máxima para visualização desktop */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
     position: relative;
     
@@ -377,10 +378,9 @@ section h1 {
 
 .modal-media-container {
     width: 100%;
-    max-height: 400px;
-    overflow: auto; /*  permite rolar se a imagem for maior que o modal */
-    border-radius: 10px;
+    max-height: 100%;
     display: flex;
+    overflow: hidden;
     justify-content: flex-start; /*  encosta a imagem no topo */
     align-items: flex-start;     /*  garante que ela não fique centralizada verticalmente */
 }
@@ -834,9 +834,24 @@ footer {
     }
 
     .timeline {
-        min-height: 700px; /* 👈 cresce um pouco mais em telas pequenas */
-        padding:  100%;
+        overflow-x: scroll;
+        overflow-y: visible;
+        width: 950%; /* 👈 garante largura suficiente pro mobile */
+        padding: 10vh 5%;
+        min-height: 600px;
     }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 3px;
+        background-color: rgb(135, 68, 197);
+        width: 950%; /* 👈 acompanha a timeline completa */
+        z-index: 0;
+    }
+
 
     .timeline-event {
         min-width: 240px;
@@ -851,9 +866,6 @@ footer {
     .timeline-event.is-bottom {
         transform: translateY(120px);
     }
-    .timeline {
-        padding: 120px 40px; /* ajusta a altura geral */
-    }
     .timeline-content p {
         font-size: 0.9rem;
     }
@@ -865,6 +877,7 @@ footer {
     .timeline-date {
         font-size: 0.7rem;
     }
+
 
     .nav-button {
         width: 100%; 
@@ -883,7 +896,7 @@ footer {
     }
 
     .modal-media-container {
-        max-height: 250px;
+        max-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
