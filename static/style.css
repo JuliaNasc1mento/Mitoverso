@@ -364,8 +364,8 @@ section h1 {
     font-size: 30px;
     font-weight: bold;
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 3px;
+    right: 12px;
     cursor: pointer;
     transition: 0.3s;
 }
