@@ -1,4 +1,4 @@
 # Mitoverso
 Projeto integrador - Mitoverso. 
 
-Onde mitologia,  história, tecnologia e imaginação se encontram.
+Mitologia, história, tecnologia e imaginação em um só lugar.
