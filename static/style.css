@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: url('img/background.jpg');
+    background-image: url('img/img03.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -103,6 +103,7 @@ section h1 {
     width: 40%;
     text-shadow: 1px 1px 5px #000;
     margin-bottom: 40px; /* deixa espaço pro botão */
+    text-align: justify;
 }
 
 /* Botão */
@@ -142,7 +143,7 @@ section h1 {
 
 .categorias-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 50px;
     width: 100%;
@@ -210,7 +211,7 @@ section h1 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 5px;
-    padding-top: 0;
+    padding-top: 20px;
     text-shadow: 2px 2px 8px #000;
 }
 
@@ -222,15 +223,19 @@ section h1 {
     background-color: transparent;
     min-height: 600px; /* 👈 altura mínima base */
     height: auto;       /* 👈 deixa crescer conforme o conteúdo */
-    overflow-x: auto;   /* mantém a rolagem lateral */
+    overflow-x: hidden;
     overflow-y: visible; /* 👈 permite crescer verticalmente */
     width: 100%; 
     padding: 10vh 5%;   /* 👈 padding proporcional à tela, não fixo */
     align-items: center; 
-    scroll-snap-type: x mandatory; 
-    
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
 
+/* Remove scrollbar padrão */
+.timeline::-webkit-scrollbar {
+    display: none;
+}
 
 /* 1. CRIA A LINHA DE EIXO HORIZONTAL ROXA */
 .timeline::before {
@@ -243,18 +248,6 @@ section h1 {
     background-color: rgb(135, 68, 197);
     z-index: 0;
     width: 950%; 
-}
-
-/* Estiliza a barra de rolagem horizontal */
-.timeline::-webkit-scrollbar {
-    height: 10px;
-}
-.timeline::-webkit-scrollbar-thumb {
-    background-color: rgb(237, 167, 35); 
-    border-radius: 5px;
-}
-.timeline::-webkit-scrollbar-track {
-    background: rgba(20, 20, 40, 0.5); 
 }
 
 /* Item de Evento Base */
@@ -273,6 +266,38 @@ section h1 {
 .timeline-event:first-child { margin-left: 5%; } 
 .timeline-event:last-child { margin-right: 5%; } 
 
+/*Estilização dos botões da barra de rolagem*/
+.timeline-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    color: #f7d774;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgb(135, 68, 197);
+    transition: .2s;
+    z-index: 999;
+}
+
+.timeline-nav:hover {
+    background: rgba(0,0,0,0.75);
+    transform: translateY(-50%) scale(1.12);
+}
+
+.timeline-nav.left {
+    left: 15px;
+}
+
+.timeline-nav.right {
+    right: 15px;
+}
 
 /* ==================== */
 /* Alternância ACIMA/ABAIXO - POSICIONAMENTO FINAL ESTÁVEL */
@@ -454,64 +479,67 @@ section h1 {
 
 /* Injeção das Imagens de Fundo */
 .content-caos {
-    background-image: url('../static/img/O Caus.jpg');
+    background-image: url('../static/img/img04.jpg');
 }
 .content-urano {
-    background-image: url('../static/img/Queda de Urano.jpg');
+    background-image: url('../static/img/img05.jpg');
 }
 .content-titas {
-    background-image: url('../static/img/Os titãs.jpg');
+    background-image: url('../static/img/img06.png');
 }
 .content-cronos-devora {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img07.png');
 }
 .content-titanomaquia {
-    background-image: url('../static/img/A Ascensão de Zeus.jpg');
+    background-image: url('../static/img/img08.jpg');
 }
 .content-organizacao-olimpicos {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img09.png');
 }
 .content-nascimento-atena {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img10.png');
 }
 .content-apolo-artemis {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img13.png');
 }
 .content-dionisio {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img14.png');
 }
 .content-hefesto {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img11.png');
 }
 .content-hades-persefone {
     background-image: url('../static/img/');
 }
+.content-16 {
+    background-image: url('../static/img/img16.png') ;
+}
 .content-pallas-atena {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img15.png');
 }
 .content-prometeu-pandora {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img12.png');
 }
 .content-fundacao-atenas {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img17.png');
 }
 .content-perseu-medusa {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img18.png');
 }
 .content-hercules {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img19.png');
 }
 .content-gigantomaquia {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img20.png');
 }
 .content-jasao-medeia {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img21.png');
 }
 .content-teseu-minotauro {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img22.png');
 }
 .content-ariadne-dionisio {
-    background-image: url('../static/img/');
+    background-image: url('../static/img/img23.png');
 }
 .content-belerofonte-quimera {
     background-image: url('../static/img/');
@@ -932,10 +960,83 @@ footer {
         width: 100%;
     }
 
-
 }
 
 html, body {
     max-width: 100%;
     overflow-x: hidden; /* 👈 bloqueia rolagem lateral */
+}
+
+
+/*Páginas sobre, referencias e academico*/
+.section2{
+    margin: auto;
+    padding: auto;
+}
+
+.pinf{
+    text-indent: 40px;
+    text-align: justify;
+    font-size: 1.1rem;
+    width: 90%;
+    position: relative;
+    left: auto;
+}
+
+.h3inf{
+    color: rgb(237, 167, 35); 
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    padding-top: 20px;
+    text-shadow: 2px 2px 8px #000;
+    position: relative;
+    left: auto;
+}
+
+/*Página sobre*/
+.galeria-cards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 90px;
+    padding: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 90%;
+    background-color: rgba(40, 40, 70, 0.7);
+    border: 1px solid rgb(135, 68, 197);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s;
+    margin-top: 60px;
+
+}
+
+.card-item:hover {
+    transform: translateY(-6px);
+    border-color: rgb(237, 167, 35);
+}
+
+.card-item img {
+    width: 100%;
+    display: block;
+}
+
+.card-titulo {
+    font-size: 1.25rem;
+    margin: 15px;
+}
+
+.card-descricao {
+    margin: 0 15px 15px 15px;
+    color: #ddd;
+    font-size: 0.95rem;
 }

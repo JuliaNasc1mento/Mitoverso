@@ -73,3 +73,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 }); // <-- AQUI FECHA O document.addEventListener('DOMContentLoaded')
+
+
+const timeline = document.querySelector(".timeline");
+const btnLeft = document.querySelector(".timeline-nav.left");
+const btnRight = document.querySelector(".timeline-nav.right");
+
+const scrollAmount = 350; // distância por clique (ajuste se quiser)
+
+btnRight.addEventListener("click", () => {
+    timeline.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth"
+    });
+});
+
+btnLeft.addEventListener("click", () => {
+    timeline.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth"
+    });
+});
