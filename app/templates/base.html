@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/img01.png') }}" type="image/x-icon">         <!-- Imagem favicon-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">                                <!-- CSS style-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cabecalho.css') }}">                            <!-- CSS cabeçalho -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rodape.css') }}">                               <!-- CSS rodapé-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">          <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!-- Bootstrap Icons -->
+    {% block css %} {% endblock %}
+</head>
+<body>
+    <!--  Cabeçario -->
+    <header class="navbar navbar-expand-lg navbar-dark menu-principal">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/img02.png') }}" alt="Mitoverso" class="logo">
+            </a>
+
+            <!-- Menu Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse justify-content-center" id="menu">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('index') }}">
+                            Início
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('principal') }}">
+                            Estude
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('cards') }}">
+                            Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('projeto') }}">
+                            Saiba mais!
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Login -->
+            <a href="{{ url_for('login') }}" class="btn btn-login">
+                <i class="bi bi-person"></i>
+                Login
+            </a>
+        </div>
+    </header>
+
+    <!-- Principal -->
+    <main>
+        {% block conteudo %} {% endblock %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../static/img/img02.png" alt="Logo extendida - Mitoverso" class="footer-logo">
+                <p><strong>Mitologia, história, tecnologia e imaginação em um só lugar.</strong></p>
+                <p>Desenvolvido por: Ana Beatriz Lima, Emanuelle Alves e Julia Nascimento</p>
+            </div>
+
+            <div class="footer-center">
+                <h4>Links Rápidos:</h4>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('principal') }}">Estude</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('projeto') }}">Saiba mais!</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Contato:</h4>
+                <p>Email: <a href="mailto:mitoverso.ifrn@gmail.com">mitoverso.ifrn@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 História e tecnologia: Mitoverso – plataforma dinâmica de mitologia grega.</p>
+            <p>Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

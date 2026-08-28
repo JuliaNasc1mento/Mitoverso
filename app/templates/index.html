@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block titulo %} Mitoverso {% endblock %}
+{% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/index.css') }}"> {% endblock %}
+{% block conteudo %}
+
+<!-- Carrossel -->
+<div id="carouselMitoverso" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselMitoverso" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselMitoverso" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselMitoverso" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img/banner1.jpg') }}" class="d-block w-100 banner" alt="Imagem 1">
+            <div class="carousel-caption">
+                <h1>Descubra a Mitologia Grega</h1>
+                <p>Explore deuses, heróis, monstros e titãs através de uma plataforma gamificada.</p>
+                <a href="{{ url_for('principal') }}" class="btn btn-warning btn-lg">
+                    Começar Jornada
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/banner2.jpg') }}" class="d-block w-100 banner" alt="Imagem 2">
+            <div class="carousel-caption">
+                <h1>Conheça os Deuses do Olimpo</h1>
+                <p>Aprenda sobre Zeus, Atena, Poseidon, Hades e muitos outros.</p>
+                <a href="{{ url_for('cards') }}" class="btn btn-warning btn-lg">
+                    Explorar
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/banner3.jpg') }}" class="d-block w-100 banner" alt="Imagem 3">
+            <div class="carousel-caption">
+                <h1>Colecione Cards</h1>
+                <p>Ganhe experiência respondendo quizzes e desbloqueando personagens.</p>
+                <a href="{{ url_for('login') }}" class="btn btn-warning btn-lg">
+                    Entrar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sobre -->
+<section class="container py-5">
+    <div class="text-center">
+        <h2 class="titulo">Conheça o Mitoverso</h2>
+        <p class="lead mt-4">O Mitoverso é uma plataforma educacional criada para tornar o estudo da Mitologia Grega mais divertido, interativo e envolvente. Descubra personagens lendários, responda desafios e acompanhe sua evolução por meio de um sistema de gamificação. </p>
+    </div>
+</section>
+
+<!-- Categorias -->
+<section class="container pb-5">
+    <div class="row g-4">
+        <div class="col-lg-4">
+            <div class="card categoria shadow">
+                <img src="{{ url_for('static', filename='img/deuses.jpg') }}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3>Deuses</h3>
+                    <p>Conheça os habitantes do Monte Olimpo.</p>
+
+                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
+                        Saiba mais
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card categoria shadow">
+                <img src="{{ url_for('static', filename='img/herois.jpg') }}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3>Heróis</h3>
+                    <p>Descubra as maiores lendas da Grécia Antiga.</p>
+
+                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
+                        Saiba mais
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card categoria shadow">
+                <img src="{{ url_for('static', filename='img/monstros.jpg') }}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3>Monstros</h3>
+                    <p>Enfrente criaturas que marcaram a mitologia.</p>
+
+                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
+                        Saiba mais
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destaques -->
+<section class="container py-5">
+    <h2 class="text-center titulo mb-5">Personagens em Destaque</h2>
+    <div class="row g-4">
+        {% for personagem in ['Zeus','Atena','Hades','Poseidon'] %}
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow">
+                <img src="{{ url_for('static', filename='img/personagem.jpg') }}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>{{ personagem }}</h5>
+                    <p>Conheça sua história e seus poderes.</p>
+
+                    <a href="{{ url_for('cards') }}" class="btn btn-outline-warning">
+                        Ver detalhes
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Section final -->
+<section class="container text-center py-5">
+    <h2>Comece sua jornada pelo Mitoverso!</h2>
+    <p class="lead">Cadastre-se gratuitamente e descubra o universo da Mitologia Grega.</p>
+
+    <a href="{{ url_for('login') }}" class="btn btn-warning btn-lg">
+        Entrar
+    </a>
+</section>
+{% endblock %}

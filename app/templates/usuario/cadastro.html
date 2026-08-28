@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Mitoverso {% endblock %}
+
+{% block conteudo %}
+
+    <!--Principal-->
+    <main>
+        <section class="hero d-flex align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card bg-black bg-opacity-50 text-light shadow-lg border-3 rounded-4">
+                            <div class="card-body p-4">
+
+                                <!--Título para section-->
+                                <h3 class="text-center fw-bold text-warning mb-4">Cadastro:</h3>
+
+                                <!--Formulário-->
+                                <form method="POST">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control form-control-lg" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Senha</label>
+                                        <input type="text" name="senha" class="form-control form-control-lg" required>
+                                    </div>
+
+                                    <!--Botão para cadastrar-->
+                                    <div class="d-grid mt-4">
+                                        <button type="submit" class="btn btn-warning btn-lg fw-bold rounded-pill">Cadastre-se</button>
+                                    </div>
+                                </form>
+                                <p class="text-center mt-3 small">Seja bem-vindo!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
+    
+    
