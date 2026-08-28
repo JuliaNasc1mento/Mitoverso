@@ -1,0 +1,74 @@
+footer {
+    background-color: rgba(20, 20, 40, 0.7); 
+    backdrop-filter: blur(6px);
+    color: white;
+    padding: 40px 40px;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px 20px 0 0;
+    font-size: 15px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 50px;
+    
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 0 1 250px;
+    min-width: 200px;
+}
+
+.footer-left p,
+.footer-right p,
+.footer-center a,
+.footer-bottom {
+    color: white;
+    margin-top: 15px;
+}
+
+.footer-center h4,
+.footer-right h4 {
+    color: rgb(237, 167, 35);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-center ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center li,
+.footer-right p {
+    margin-bottom: 4px;
+}
+
+.footer-center a,
+.footer-right a {
+    text-decoration: none;
+}
+
+.footer-center a:hover,
+.footer-right a {
+    color: rgb(177, 112, 221);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 40px;
+    padding-top: 15px;
+    font-size: .9rem;
+}

@@ -1,0 +1,148 @@
+.menu-principal{
+
+    background:var(--cinza);
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+    margin-bottom: 50px;
+
+}
+
+.logo{
+
+    height:60px;
+    width:auto;
+
+}
+
+/*=========================
+        MENU
+==========================*/
+
+.navbar-nav{
+
+    gap:18px;
+
+}
+
+.nav-link{
+
+    color:white !important;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:var(--laranja)!important;
+
+}
+
+.nav-link.active{
+
+    color:var(--laranja)!important;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--laranja);
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+/*=========================
+      BOTÃO LOGIN
+==========================*/
+
+.btn-login{
+    color: #FFFFFF !important;
+    border: 2px solid #F4A11A !important;
+    border-radius: 12px;
+    padding: 10px 22px;
+    font-weight: 600;
+    background: transparent;
+    transition: .3s;
+}
+
+.btn-login:hover{
+    background: #F4A11A !important;
+    color: #FFFFFF !important;
+}
+
+.btn-login i{
+    color: #FFFFFF !important;
+    margin-right: 8px;
+}
+
+.btn-login:hover{
+
+    background:var(--laranja);
+
+    color:white;
+
+}
+
+.btn-login i{
+
+    margin-right:8px;
+
+}
+
+/*=========================
+      RESPONSIVO
+==========================*/
+
+@media(max-width:991px){
+
+    .navbar-nav{
+
+        gap:5px;
+
+        margin:20px 0;
+
+        text-align:center;
+
+    }
+
+    .btn-login{
+
+        width:100%;
+
+        margin-top:15px;
+
+    }
+
+}

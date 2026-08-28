@@ -1,0 +1,178 @@
+/* HERO */
+
+.hero-estude{
+
+    padding:90px 0;
+
+    background:linear-gradient(135deg,#6f42c1,#4e2ca8);
+
+    color:white;
+
+}
+
+.hero-estude h1{
+
+    font-size:3rem;
+
+    font-weight:bold;
+
+}
+
+.hero-estude h1 span{
+
+    color:#F4A11A;
+
+}
+
+.hero-estude p{
+
+    margin:30px 0;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+}
+
+.hero-img{
+
+    max-width:450px;
+
+}
+
+/* PESQUISA */
+
+.pesquisa{
+
+    margin-top:-35px;
+
+    margin-bottom:50px;
+
+}
+
+.input-group{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.input-group input{
+
+    border:none;
+
+    padding:15px;
+
+}
+
+.input-group input:focus{
+
+    box-shadow:none;
+
+}
+
+/* TITULOS */
+
+.titulo{
+
+    color:#6f42c1;
+
+    font-weight:bold;
+
+}
+
+/* CARDS */
+
+.categoria{
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.categoria:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.categoria img{
+
+    height:240px;
+
+    object-fit:cover;
+
+}
+
+.categoria h3{
+
+    color:#6f42c1;
+
+    font-weight:bold;
+
+}
+
+.categoria .btn{
+
+    margin-top:10px;
+
+}
+
+/* CTA */
+
+.cta-estude{
+
+    padding:80px 0;
+
+    background:#f8f9fa;
+
+}
+
+.cta-estude h2{
+
+    color:#6f42c1;
+
+    font-weight:bold;
+
+}
+
+.cta-estude p{
+
+    margin:25px auto;
+
+    max-width:700px;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:992px){
+
+    .hero-estude{
+
+        text-align:center;
+
+    }
+
+    .hero-img{
+
+        margin-top:40px;
+
+        max-width:320px;
+
+    }
+
+}
+/*===============================================================================================================*/
+
+

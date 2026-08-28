@@ -1,0 +1,68 @@
+.text-roxo{
+    color:#7B3FE4;
+}
+
+.bg-light{
+    background:#F8F9FA !important;
+}
+
+.border-warning{
+    border-color:#F4A11A !important;
+}
+
+.shadow-sm{
+    transition:.3s;
+}
+
+.shadow-sm:hover{
+    transform:translateY(-5px);
+    box-shadow:0 .75rem 1.5rem rgba(0,0,0,.15)!important;
+}
+
+.banner{
+    height:650px;
+    object-fit:cover;
+    filter:brightness(55%);
+}
+
+.carousel-caption{
+    bottom:18%;
+}
+
+.carousel-caption h1{
+    font-size:3.5rem;
+    font-weight:bold;
+}
+
+.titulo{
+    color:#7B3FE4;
+    font-weight:700;
+}
+
+.categoria{
+    transition:.3s;
+    border:none;
+}
+
+.categoria:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    height:250px;
+    object-fit:cover;
+}
+
+.btn-warning{
+    background:#F4A11A;
+    border:none;
+}
+
+.btn-warning:hover{
+    background:#7B3FE4;
+}
+
+.accordion-button:not(.collapsed){
+    background:#7B3FE4;
+    color:white;
+}
