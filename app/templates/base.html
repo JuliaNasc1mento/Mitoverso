@@ -4,7 +4,7 @@
     <meta charset="UTF-8">                                                                                          <!-- Padrão de confiuração que suporta acentuação -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">                                          <!-- Ocupa 100% da área disponivel -->
     <title>{% block titulo %} {% endblock %}</title>                                                                <!-- Título utilizando jinja -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/img01.png') }}" type="image/x-icon">         <!-- Imagem favicon-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/img01 - logo.png') }}" type="image/x-icon">  <!-- Imagem favicon-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">                                <!-- CSS style-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cabecalho.css') }}">                            <!-- CSS cabeçalho -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/rodape.css') }}">                               <!-- CSS rodapé-->
@@ -19,7 +19,7 @@
 
             <!-- Logo -->
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='img/img02.png') }}" alt="Mitoverso" class="logo">
+                <img src="{{ url_for('static', filename='img/img02 - logo_extendida.png') }}" alt="Mitoverso" class="logo">
             </a>
 
             <!-- Menu Mobile -->
@@ -74,7 +74,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <img src="../static/img/img02.png" alt="Logo extendida - Mitoverso" class="footer-logo">
+                <img src="../static/img/img02 - logo_extendida.png" alt="Logo extendida - Mitoverso" class="footer-logo">
                 <p><strong>Mitologia, história, tecnologia e imaginação em um só lugar.</strong></p>
                 <p>Desenvolvido por: Ana Beatriz Lima, Emanuelle Alves e Julia Nascimento</p>
             </div>

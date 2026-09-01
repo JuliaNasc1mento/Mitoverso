@@ -1,11 +1,9 @@
 /* Fundo da página */
-
 body{
     background-color:#f5f6fa;
 }
 
 /* ---------- Cards ---------- */
-
 .card{
     border:none;
     border-radius:18px;
@@ -18,85 +16,53 @@ body{
 }
 
 /* ---------- Perfil ---------- */
-
 .card-perfil{
-
     background:white;
-
 }
 
 .card-perfil img{
-
     border:5px solid var(--laranja);
-
     object-fit:cover;
-
 }
 
 .card-perfil h2{
-
     color:var(--roxo);
-
     font-weight:700;
-
 }
 
 .card-perfil p{
-
     color:var(--cinza);
-
 }
 
 /* ---------- Badge Nível ---------- */
-
 .badge-nivel{
-
     background:var(--laranja);
-
     color:#fff;
-
     padding:.6rem 1rem;
-
     border-radius:50px;
-
     font-size:1rem;
-
 }
 
 /* ---------- Botão ---------- */
-
 .btn-outline-warning{
-
     border:2px solid var(--laranja);
-
     color:var(--laranja);
-
     font-weight:600;
-
 }
 
 .btn-outline-warning:hover{
-
     background:var(--laranja);
-
     color:white;
-
 }
 
 /* ---------- Barra de progresso ---------- */
-
 .progress{
-
     height:25px;
-
     border-radius:20px;
-
     background:#ddd;
-
 }
 
 .progress-bar{
-
     background:linear-gradient(
         90deg,
         var(--laranja),
@@ -104,121 +70,75 @@ body{
     );
 
     font-weight:600;
-
 }
 
 /* ---------- Estatísticas ---------- */
-
 .estatistica{
-
     text-align:center;
-
 }
 
 .estatistica h1{
-
     font-size:3rem;
-
 }
 
 .estatistica h3{
-
     color:var(--roxo);
-
     font-weight:bold;
-
 }
 
 .estatistica p{
-
     color:var(--cinza);
-
     margin:0;
-
 }
 
 /* ---------- Títulos ---------- */
-
 .card-header{
-
     background:var(--roxo);
-
     color:white;
-
     border:none;
-
     font-weight:bold;
-
     border-radius:18px 18px 0 0 !important;
-
 }
 
 /* ---------- Tabela ---------- */
-
 .table thead{
-
     background:var(--laranja);
-
 }
 
 .table th{
-
     color:white;
-
 }
 
 .table-hover tbody tr:hover{
-
     background:#f8f0ff;
-
 }
 
 /* ---------- Conquistas ---------- */
-
 .conquistas span{
-
     margin:10px;
-
     transition:.3s;
-
     cursor:pointer;
-
 }
 
 .conquistas span:hover{
-
     transform:scale(1.25);
-
 }
 
 /* ---------- Avatar ---------- */
-
 .avatar{
-
     width:150px;
-
     height:150px;
-
     border-radius:50%;
-
     object-fit:cover;
-
 }
 
 /* ---------- Responsividade ---------- */
-
 @media(max-width:768px){
-
     .card-perfil{
-
         text-align:center;
-
     }
 
     .avatar{
-
         margin-bottom:20px;
-
     }
-
 }
