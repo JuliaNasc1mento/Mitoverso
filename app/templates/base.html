@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %} {% endblock %}</title>
+    <meta charset="UTF-8">                                                                                          <!-- Padrão de confiuração que suporta acentuação -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                          <!-- Ocupa 100% da área disponivel -->
+    <title>{% block titulo %} {% endblock %}</title>                                                                <!-- Título utilizando jinja -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/img01.png') }}" type="image/x-icon">         <!-- Imagem favicon-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">                                <!-- CSS style-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cabecalho.css') }}">                            <!-- CSS cabeçalho -->
