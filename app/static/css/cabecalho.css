@@ -68,11 +68,6 @@
     transition: .3s;
 }
 
-.btn-login:hover{
-    background: #F4A11A !important;
-    color: #FFFFFF !important;
-}
-
 .btn-login i{
     color: #FFFFFF !important;
     margin-right: 8px;
@@ -81,10 +76,6 @@
 .btn-login:hover{
     background:var(--laranja);
     color:white;
-}
-
-.btn-login i{
-    margin-right:8px;
 }
 
 /*=========================

@@ -62,6 +62,8 @@
 <!-- Categorias -->
 <section class="container pb-5">
     <div class="row g-4">
+
+        <!-- Categoria de Deuses -->
         <div class="col-lg-4">
             <div class="card categoria shadow">
                 <img src="{{ url_for('static', filename='img/deuses.jpg') }}" class="card-img-top">
@@ -77,6 +79,7 @@
             </div>
         </div>
 
+        <!-- Categoria de Heróis -->
         <div class="col-lg-4">
             <div class="card categoria shadow">
                 <img src="{{ url_for('static', filename='img/herois.jpg') }}" class="card-img-top">
@@ -92,6 +95,7 @@
             </div>
         </div>
 
+        <!-- Categoria de Monstros -->
         <div class="col-lg-4">
             <div class="card categoria shadow">
                 <img src="{{ url_for('static', filename='img/monstros.jpg') }}" class="card-img-top">
@@ -106,29 +110,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Destaques -->
-<section class="container py-5">
-    <h2 class="text-center titulo mb-5">Personagens em Destaque</h2>
-    <div class="row g-4">
-        {% for personagem in ['Zeus','Atena','Hades','Poseidon'] %}
-        <div class="col-md-6 col-lg-3">
-            <div class="card shadow">
-                <img src="{{ url_for('static', filename='img/personagem.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>{{ personagem }}</h5>
-                    <p>Conheça sua história e seus poderes.</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-outline-warning">
-                        Ver detalhes
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        {% endfor %}
     </div>
 </section>
 
