@@ -17,10 +17,11 @@
 
 .navbar-nav{
     gap:18px;
+    color:#7B3FE4;
 }
 
 .nav-link{
-    color:white !important;
+    color:#7B3FE4 !important;
     font-size:17px;
     font-weight:500;
     position:relative;
@@ -59,7 +60,7 @@
 ==========================*/
 
 .btn-login{
-    color: #FFFFFF !important;
+    color: #7B3FE4 !important;
     border: 2px solid #F4A11A !important;
     border-radius: 12px;
     padding: 10px 22px;
@@ -69,7 +70,7 @@
 }
 
 .btn-login i{
-    color: #FFFFFF !important;
+    color: #7B3FE4 !important;
     margin-right: 8px;
 }
 
