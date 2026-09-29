@@ -25,3 +25,13 @@ def cards():
 @app.route("/login")
 def login():
     return render_template("usuario/login.html")
+
+# Rota da tela de cadastro
+@app.route("/cadastro")
+def cadastro():
+    return render_template("usuario/cadastro.html")
+
+# Rota da tela de perfil
+@app.route("/perfil")
+def perfil():
+    return render_template("usuario/perfil.html")

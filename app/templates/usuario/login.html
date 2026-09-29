@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-
-{% block titulo %} Mitoverso {% endblock %}
-
+{% block titulo %} Mitoverso | Login {% endblock %}
+{% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/login.css') }}"> {% endblock %}
 {% block conteudo %}
 
     <!--Principal-->
@@ -40,7 +39,7 @@
                                 <!--Link para cadastro-->
                                 <p class="text-center mt-3 small">
                                     Não tem conta?
-                                    <a href="{{ url_for('login') }}" class="text-warning text-decoration-none fw-semibold">Cadastre-se</a>
+                                    <a href="{{ url_for('cadastro') }}" class="text-warning text-decoration-none fw-semibold">Cadastre-se</a>
                                 </p>
                             </div>
                         </div>
