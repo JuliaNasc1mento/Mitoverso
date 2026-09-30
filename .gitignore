@@ -1,0 +1,9 @@
+# Arquivos gerados pelo python
+__pycache__/
+*.py[cod]
+
+# Ambientes virtuais
+venvmitoverso/
+
+# Variáveis de ambiente
+.env
