@@ -1,174 +1,182 @@
 {% extends 'base.html' %}
-{% block titulo %} Mitoverso {% endblock %}
-{% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/index.css') }}"> {% endblock %}
+{% block titulo %} Mitoverso | Início {% endblock %}
 {% block conteudo %}
 
-<!-- Carrossel -->
-<div id="carouselMitoverso" class="carousel slide" data-bs-ride="carousel">
-
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselMitoverso" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#carouselMitoverso" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#carouselMitoverso" data-bs-slide-to="2"></button>
-    </div>
-
-    <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='img/banner1.jpg') }}" class="d-block w-100 banner" alt="Imagem 1">
-            <div class="carousel-caption">
-                <h1>Descubra a Mitologia Grega</h1>
-                <p>Explore deuses, heróis, monstros e titãs através de uma plataforma gamificada.</p>
-                <a href="{{ url_for('principal') }}" class="btn btn-warning btn-lg">
-                    Começar Jornada
-                </a>
+<main>
+    <section id="inicio" class="bg-mitoverso-gradient py-5 py-lg-6 position-relative overflow-hidden">
+      <div class="container py-4 py-lg-5">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-sm mb-3">
+              Desvende os segredos dos <span class="text-orange">Deuses e Heróis</span> antigos
+            </h1>
+            <p class="lead text-mv-muted mb-4 fs-5">
+              Explore mitologias fascinantes, crie narrativas épicas e conecte-se com entusiastas do folclore e da fantasia de todo o mundo.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+              <a href="principal.html" class="btn btn-outline-mitoverso btn-lg px-4 py-3 rounded-3">
+                Conhecer a Plataforma
+              </a>
             </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="position-relative d-inline-block w-100 max-w-md">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" 
+                   alt="Mitoverso Ilustração" 
+                   class="img-fluid rounded-4 shadow-lg border border-warning border-opacity-25"
+                   style="max-height: 480px; object-fit: cover; width: 100%;"
+                   onerror="this.src='https://placehold.co/600x480/2b093f/ff7f00?text=Mitoverso'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mitologias" class="py-5 my-4">
+      <div class="container py-3">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+          <span class="text-orange text-uppercase fw-bold tracking-wider fs-7">Explore Universos</span>
+          <h2 class="display-6 fw-bold mt-1 mb-3">Panteões em Destaque</h2>
+          <p class="text-mv-muted">Mergulhe nas histórias mais icônicas da humanidade, desde os picos do Olimpo até o reino de Asgard.</p>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='img/banner2.jpg') }}" class="d-block w-100 banner" alt="Imagem 2">
-            <div class="carousel-caption">
-                <h1>Conheça os Deuses do Olimpo</h1>
-                <p>Aprenda sobre Zeus, Atena, Poseidon, Hades e muitos outros.</p>
-                <a href="{{ url_for('cards') }}" class="btn btn-warning btn-lg">
-                    Explorar
-                </a>
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="mythology-card shadow-sm border border-dark">
+              <img src="#" 
+                   alt="Mitologia Grega"
+                   onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
+              <div class="overlay">
+                <h3 class="h4 fw-bold text-white mb-1">Grega</h3>
+                <p class="text-mv-muted small mb-3">Zeus, Olimpo, Titãs e Heróis lendários.</p>
+                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+              </div>
             </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="mythology-card shadow-sm border border-dark">
+              <img src="#" 
+                   alt="Mitologia Grega"
+                   onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
+              <div class="overlay">
+                <h3 class="h4 fw-bold text-white mb-1">Nórdica</h3>
+                <p class="text-mv-muted small mb-3">Odin, Thor, Valhalla e o Ragnarök.</p>
+                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="mythology-card shadow-sm border border-dark">
+              <img src="#" 
+                   alt="Mitologia Egípcia"
+                   onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
+              <div class="overlay">
+                <h3 class="h4 fw-bold text-white mb-1">Egípcia</h3>
+                <p class="text-mv-muted small mb-3">Anúbis, Rá, Pirâmides e o Livro dos Mortos.</p>
+                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="mythology-card shadow-sm border border-dark">
+              <img src="#" 
+                   alt="Mitologia Japonesa"
+                   onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
+              <div class="overlay">
+                <h3 class="h4 fw-bold text-white mb-1">Japonesa</h3>
+                <p class="text-mv-muted small mb-3">Amaterasu, Yokais, Kami e Dragões.</p>
+                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="text-center mt-5">
+          <a href="gameficacao/cards.html" class="btn btn-outline-mitoverso px-4 py-2 rounded-pill">Ver Todos os Panteões</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" class="py-5 bg-mitoverso-gradient">
+      <div class="container py-3">
+        <div class="text-center max-w-2xl mx-auto mb-5">
+          <span class="text-orange text-uppercase fw-bold tracking-wider fs-7">O Que Oferecemos</span>
+          <h2 class="display-6 fw-bold mt-1 mb-3">Recursos do Mitoverso</h2>
+          <p class="text-mv-muted">Ferramentas e conteúdos criados para levar sua imersão em mundos fantásticos ao próximo nível.</p>
         </div>
 
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-            <img src="{{ url_for('static', filename='img/banner3.jpg') }}" class="d-block w-100 banner" alt="Imagem 3">
-            <div class="carousel-caption">
-                <h1>Colecione Cards</h1>
-                <p>Ganhe experiência respondendo quizzes e desbloqueando personagens.</p>
-                <a href="{{ url_for('autenticacao.login') }}" class="btn btn-warning btn-lg">
-                    Entrar
-                </a>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 bg-mitoverso-card h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-journal-bookmark-fill text-orange fs-3"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">Acervo Digital</h3>
+              <p class="text-mv-muted small mb-0">Acesse uma enciclopédia completa de mitos, genealogias divinas, artefatos e criaturas mágicas.</p>
             </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 bg-mitoverso-card h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-pencil-square text-orange fs-3"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">Criação de Histórias</h3>
+              <p class="text-mv-muted small mb-0">Escreva suas próprias lendas e compartilhe suas criações com uma comunidade engajada.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 bg-mitoverso-card h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-person-lines-fill text-orange fs-3"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">Fichas de Personagem</h3>
+              <p class="text-mv-muted small mb-0">Gere e organize atributos, habilidades e histórias de origem para jogos de RPG e literatura.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 bg-mitoverso-card h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-chat-left-quote-fill text-orange fs-3"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">Comunidade Ativa</h3>
+              <p class="text-mv-muted small mb-0">Participe de fóruns de discussão, clubes de leitura e debates sobre folclore mundial.</p>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
 
-<!-- Sobre -->
-<section class="container py-5">
-    <div class="text-center">
-        <h2 class="titulo">Conheça o Mitoverso</h2>
-        <p class="lead mt-4">O Mitoverso é uma plataforma educacional criada para tornar o estudo da Mitologia Grega mais divertido, interativo e envolvente. Descubra personagens lendários, responda desafios e acompanhe sua evolução por meio de um sistema de gamificação. </p>
-    </div>
-</section>
-
-<!-- Categorias com cards-->
-<section class="container pb-5">
-    <div class="row g-4">
-
-        <!-- Categoria de Deuses -->
-        <div class="col-lg-4">
-            <div class="card categoria shadow">
-                <img src="{{ url_for('static', filename='img/deuses.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h3>Deuses</h3>
-                    <p>Texto</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
-                        Saiba mais
-                    </a>
-
+    <section id="comecar" class="py-5">
+      <div class="container py-4">
+        <div class="cta-banner p-4 p-lg-5 text-center position-relative overflow-hidden">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <i class="bi bi-compass text-orange display-4 mb-3 d-block"></i>
+              <h2 class="display-6 fw-bold text-white mb-3">Pronto para iniciar sua jornada?</h2>
+              <p class="text-mv-muted mb-4 fs-5">
+                Junte-se ao Mitoverso hoje e receba semanalmente histórias inéditas, análises mitológicas e novidades da plataforma.
+              </p>
+              <form class="row g-2 justify-content-center max-w-lg mx-auto">
+                <div class="col-sm-4">
+                  <button type="submit" class="btn btn-mitoverso btn-lg w-100">Inscrever-se</button>
                 </div>
+              </form>
+              <p class="text-mv-muted small mt-3 mb-0">Respeitamos sua privacidade. Cancele sua inscrição quando quiser.</p>
             </div>
+          </div>
         </div>
-
-        <!-- Categorias de Primordiais -->
-        <div class="col-lg-4">
-            <div class="card categoria shadow">
-                <img src="{{ url_for('static', filename='img/herois.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h3>Primordiais</h3>
-                    <p>Texto</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
-                        Saiba mais
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Categoria de Heróis -->
-        <div class="col-lg-4">
-            <div class="card categoria shadow">
-                <img src="{{ url_for('static', filename='img/herois.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h3>Heróis</h3>
-                    <p>Texto</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
-                        Saiba mais
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Categorias de Titãs -->
-        <div class="col-lg-4">
-            <div class="card categoria shadow">
-                <img src="{{ url_for('static', filename='img/herois.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h3>Titãs</h3>
-                    <p>Texto</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
-                        Saiba mais
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Categoria de Monstros -->
-        <div class="col-lg-4">
-            <div class="card categoria shadow">
-                <img src="{{ url_for('static', filename='img/monstros.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h3>Monstros</h3>
-                    <p>Texto</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
-                        Saiba mais
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Categorias de Espiritos -->
-        <div class="col-lg-4">
-            <div class="card categoria shadow">
-                <img src="{{ url_for('static', filename='img/herois.jpg') }}" class="card-img-top">
-                <div class="card-body text-center">
-                    <h3>Espíritos</h3>
-                    <p>Texto</p>
-
-                    <a href="{{ url_for('cards') }}" class="btn btn-warning">
-                        Saiba mais
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- Section final -->
-<section class="container text-center py-5">
-    <h2>Comece sua jornada pelo Mitoverso!</h2>
-    <p class="lead">Cadastre-se gratuitamente e descubra o universo da Mitologia Grega.</p>
-
-    <a href="{{ url_for('principal') }}" class="btn btn-warning btn-lg">
-        Entrar
-    </a>
-</section>
+      </div>
+    </section>
+</main>
 {% endblock %}

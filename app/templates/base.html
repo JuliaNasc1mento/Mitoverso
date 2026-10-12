@@ -8,61 +8,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">         <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- Bootstrap Icons -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">                               <!-- CSS style-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cabecalho.css') }}">                           <!-- CSS cabeçalho -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/rodape.css') }}">                              <!-- CSS rodapé-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cab_rod_index.css') }}">
     {% block css %} {% endblock %}
 </head>
 <body>
     <!--  Cabeçario -->
-    <header class="navbar navbar-expand-lg navbar-dark menu-principal">
-        <div class="container">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-mitoverso-nav border-bottom border-dark border-opacity-50 py-3">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand fs-3 d-flex align-items-center gap-2" href="#">
+                    <i class="bi bi-intersect text-orange"></i>
+                    <span>Mito</span>verso
+                </a>
 
-            <!-- Logo -->
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='img/img02 - logo_extendida.png') }}" alt="Mitoverso" class="logo">
-            </a>
+                <!-- Mobile Toggler -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMitoverso" aria-controls="navbarMitoverso" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <!-- Menu Mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarMitoverso">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#inicio">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#mitologias">Mitologias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recursos">Recursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#comunidade">Comunidade</a>
+                        </li>
+                    </ul>
 
-            <!-- Menu -->
-            <div class="collapse navbar-collapse justify-content-center" id="menu">
-                <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('index') }}">
-                            Início
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('principal') }}">
-                            Estude
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('cards') }}">
-                            Quiz
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('projeto') }}">
-                            Saiba mais!
-                        </a>
-                    </li>
-                </ul>
+                    <!-- Action Buttons -->
+                    <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+                        <a href="#" class="btn btn-outline-light btn-sm px-3 py-2 border-0 text-light fw-medium">Entrar</a>
+                        <a href="#comecar" class="btn btn-mitoverso btn-sm px-4 py-2 shadow-sm rounded-pill">Começar</a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Login -->
-            <a href="{{ url_for('autenticacao.login') }}" class="btn btn-login">
-                <i class="bi bi-person"></i>
-                Login
-            </a>
-        </div>
+        </nav>
     </header>
 
     <!-- Principal -->
@@ -71,33 +60,59 @@
     </main>
 
     <!-- Rodapé -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-left">
-                <img src="../static/img/img02 - logo_extendida.png" alt="Logo extendida - Mitoverso" class="footer-logo">
-                <p><strong>Mitologia, história, tecnologia e imaginação em um só lugar.</strong></p>
-                <p>Desenvolvido por: Ana Beatriz Lima, Emanuelle Alves e Julia Nascimento</p>
+    <footer id="comunidade" class="bg-mitoverso-dark border-top border-dark pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand fs-3 d-flex align-items-center gap-2 mb-3" href="#">
+                        <i class="bi bi-intersect text-orange"></i>
+                        <span>Mito</span>verso
+                    </a>
+                    <p class="text-mv-muted small mb-4">
+                        Sua plataforma definitiva para exploração mitológica, criação literária e conexão entre apaixonados por folclore mundial.
+                    </p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-mv-muted text-orange-light-hover"><i class="bi bi-discord"></i></a>
+                        <a href="#" class="text-mv-muted text-orange-light-hover"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-mv-muted text-orange-light-hover"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-mv-muted text-orange-light-hover"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Navegação</h5>
+                    <ul class="list-unstyled text-mv-muted small d-flex flex-column gap-2 mb-0">
+                        <li><a href="#inicio" class="text-decoration-none text-mv-muted">Início</a></li>
+                        <li><a href="#mitologias" class="text-decoration-none text-mv-muted">Mitologias</a></li>
+                        <li><a href="#recursos" class="text-decoration-none text-mv-muted">Recursos</a></li>
+                        <li><a href="#comunidade" class="text-decoration-none text-mv-muted">Comunidade</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Mitologias</h5>
+                    <ul class="list-unstyled text-mv-muted small d-flex flex-column gap-2 mb-0">
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Panteão Grego</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Panteão Nórdico</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Panteão Egípcio</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Folclore Brasileiro</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Suporte & Legal</h5>
+                    <ul class="list-unstyled text-mv-muted small d-flex flex-column gap-2 mb-0">
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Central de Ajuda</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Termos de Uso</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Contato</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="footer-center">
-                <h4>Links Rápidos:</h4>
-                <ul>
-                    <li><a href="{{ url_for('index') }}">Início</a></li>
-                    <li><a href="{{ url_for('principal') }}">Estude</a></li>
-                    <li><a href="{{ url_for('autenticacao.login') }}">Login</a></li>
-                    <li><a href="{{ url_for('projeto') }}">Saiba mais!</a></li>
-                </ul>
+            <div class="border-top border-dark pt-4 text-center text-mv-muted small">
+                <p class="mb-0">&copy; 2026 Mitoverso. Todos os direitos reservados. Feito com Bootstrap 5.</p>
             </div>
-
-            <div class="footer-right">
-                <h4>Contato:</h4>
-                <p>Email: <a href="mailto:mitoversoifrn2026@gmail.com">mitoversoifrn2026@gmail.com</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 História e tecnologia: Mitoverso – plataforma dinâmica de mitologia grega.</p>
-            <p>Todos os direitos reservados.</p>
         </div>
     </footer>
 
