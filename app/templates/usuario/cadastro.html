@@ -15,22 +15,50 @@
 
                                 <!--Título para section-->
                                 <h3 class="text-center fw-bold text-warning mb-4">Cadastro:</h3>
+                                
+                                <!-- Formulário de cadastro -->
+                                <form method="POST" action="{{ url_for('autenticacao.cadastro') }}">
+                                    {{ form.hidden_tag() }}
 
-                                <!--Formulário-->
-                                <form method="POST">
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control form-control-lg" required>
+                                        {{ form.nome.label(class="form-label") }}
+                                        {{ form.nome(class="form-control form-control-lg", placeholder="Digite seu nome") }}
+
+                                        {% for erro in form.nome.errors %}
+                                            <div class="text-danger small">{{ erro }}</div>
+                                        {% endfor %}
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Senha</label>
-                                        <input type="text" name="senha" class="form-control form-control-lg" required>
+                                        {{ form.email.label(class="form-label") }}
+                                        {{ form.email(class="form-control form-control-lg", placeholder="Digite seu e-mail") }}
+
+                                        {% for erro in form.email.errors %}
+                                            <div class="text-danger small">{{ erro }}</div>
+                                        {% endfor %}
                                     </div>
 
-                                    <!--Botão para cadastrar-->
+                                    <div class="mb-3">
+                                        {{ form.senha.label(class="form-label") }}
+                                        {{ form.senha(class="form-control form-control-lg", placeholder="Crie uma senha") }}
+
+                                        {% for erro in form.senha.errors %}
+                                            <div class="text-danger small">{{ erro }}</div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="mb-3">
+                                        {{ form.confirmar_senha.label(class="form-label") }}
+                                        {{ form.confirmar_senha(class="form-control form-control-lg", placeholder="Confirme sua senha") }}
+
+                                        {% for erro in form.confirmar_senha.errors %}
+                                            <div class="text-danger small">{{ erro }}</div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <!-- Botão para cadastrar -->
                                     <div class="d-grid mt-4">
-                                        <button type="submit" class="btn btn-warning btn-lg fw-bold rounded-pill">Cadastre-se</button>
+                                        {{ form.enviar(class="btn btn-warning btn-lg fw-bold rounded-pill") }}
                                     </div>
                                 </form>
                                 <p class="text-center mt-3 small">Seja bem-vindo!</p>
@@ -43,5 +71,3 @@
     </main>
 
 {% endblock %}
-    
-    

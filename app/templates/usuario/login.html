@@ -15,31 +15,64 @@
                                 <!--Titulo para section-->
                                 <h3 class="text-center fw-bold text-warning mb-4">Login:</h3>
 
-                                <!--Formulário-->
-                                <form action="{{ url_for('login') }}" method="POST">
+                                    {% with mensagens = get_flashed_messages(with_categories=true) %}
+                                        {% for categoria, mensagem in mensagens %}
+                                            <div class="alert alert-{{ categoria }} alert-dismissible fade show"
+                                                role="alert">
+                                                {{ mensagem }}
+                                                <button type="button" class="btn-close"
+                                                        data-bs-dismiss="alert"
+                                                        aria-label="Fechar"></button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endwith %}
 
-                                    <!--Email-->
+
+                                <!-- Formulário de login -->
+                                <form action="{{ url_for('autenticacao.login') }}" method="POST">
+                                    {{ form.hidden_tag() }}
+
+                                    <!-- Email -->
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control form-control-lg" required>
+                                        {{ form.email.label(class="form-label") }}
+                                        {{ form.email(
+                                            class="form-control form-control-lg",
+                                            placeholder="Digite seu e-mail"
+                                        ) }}
+
+                                        {% for erro in form.email.errors %}
+                                            <div class="text-danger small">{{ erro }}</div>
+                                        {% endfor %}
                                     </div>
 
-                                    <!--Senha-->
+                                    <!-- Senha -->
                                     <div class="mb-3">
-                                        <label class="form-label">Senha</label>
-                                        <input type="password" name="senha" class="form-control form-control-lg" required>
+                                        {{ form.senha.label(class="form-label") }}
+                                        {{ form.senha(
+                                            class="form-control form-control-lg",
+                                            placeholder="Digite sua senha"
+                                        ) }}
+
+                                        {% for erro in form.senha.errors %}
+                                            <div class="text-danger small">{{ erro }}</div>
+                                        {% endfor %}
                                     </div>
 
-                                    <!--Botão para entrar-->
+                                    <!-- Botão para entrar -->
                                     <div class="d-grid mt-4">
-                                        <button type="submit" class="btn btn-warning btn-lg fw-bold rounded-pill">Entrar</button>
+                                        {{ form.entrar(
+                                            class="btn btn-warning btn-lg fw-bold rounded-pill"
+                                        ) }}
                                     </div>
                                 </form>
 
-                                <!--Link para cadastro-->
+                                <!-- Link para cadastro -->
                                 <p class="text-center mt-3 small">
                                     Não tem conta?
-                                    <a href="{{ url_for('cadastro') }}" class="text-warning text-decoration-none fw-semibold">Cadastre-se</a>
+                                    <a href="{{ url_for('autenticacao.cadastro') }}"
+                                    class="text-warning text-decoration-none fw-semibold">
+                                        Cadastre-se
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -50,5 +83,3 @@
     </main>
 
 {% endblock %}
-    
-    

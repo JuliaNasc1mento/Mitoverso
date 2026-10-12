@@ -1,5 +1,9 @@
-import secrets
+import os
 
 class Config:
-    SECRET_KEY = secrets.token_hex(16)
+    SECRET_KEY = os.environ.get(
+        "SECRET_KEY", "chave-mitoverso"
+    )
+
     SQLALCHEMY_DATABASE_URI = "sqlite:///mitoverso.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
