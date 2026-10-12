@@ -15,7 +15,19 @@
 
                                 <!--Título para section-->
                                 <h3 class="text-center fw-bold text-warning mb-4">Cadastro:</h3>
-                                
+
+                                {% with mensagens = get_flashed_messages(with_categories=true) %}
+                                    {% for categoria, mensagem in mensagens %}
+                                        <div class="alert alert-{{ categoria }} alert-dismissible fade show"
+                                            role="alert">
+                                            {{ mensagem }}
+                                            <button type="button" class="btn-close"
+                                                    data-bs-dismiss="alert"
+                                                    aria-label="Fechar"></button>
+                                        </div>
+                                    {% endfor %}
+                                {% endwith %}
+
                                 <!-- Formulário de cadastro -->
                                 <form method="POST" action="{{ url_for('autenticacao.cadastro') }}">
                                     {{ form.hidden_tag() }}
