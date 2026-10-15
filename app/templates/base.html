@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">         <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- Bootstrap Icons -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">                               <!-- CSS style-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cab_rod_index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cab_rod_index.css') }}">                       <!-- CSS cabeçario, rodapé e index -->
     {% block css %} {% endblock %}
 </head>
 <body>
@@ -31,23 +31,23 @@
                 <div class="collapse navbar-collapse" id="navbarMitoverso">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#inicio">Início</a>
+                            <a class="nav-link" aria-current="page" href="{{url_for('index')}}">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#mitologias">Mitologias</a>
+                            <a class="nav-link" href="{{url_for('principal')}}">Estude</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#recursos">Recursos</a>
+                            <a class="nav-link" href="{{url_for('cards')}}">Panteão</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#comunidade">Comunidade</a>
+                            <a class="nav-link" href="{{url_for('projeto')}}">Saiba mais</a>
                         </li>
                     </ul>
 
                     <!-- Action Buttons -->
                     <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-                        <a href="#" class="btn btn-outline-light btn-sm px-3 py-2 border-0 text-light fw-medium">Entrar</a>
-                        <a href="#comecar" class="btn btn-mitoverso btn-sm px-4 py-2 shadow-sm rounded-pill">Começar</a>
+                        <a href="{{url_for('autenticacao.login')}}" class="btn btn-outline-light btn-sm px-3 py-2 border-0 text-light fw-medium">Entrar</a>
+                        <a href="{{url_for('principal')}}" class="btn btn-mitoverso btn-sm px-4 py-2 shadow-sm rounded-pill">Começar</a>
                     </div>
                 </div>
             </div>
