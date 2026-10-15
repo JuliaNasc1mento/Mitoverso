@@ -63,13 +63,13 @@
     <footer id="comunidade" class="bg-mitoverso-dark border-top border-dark pt-5 pb-4">
         <div class="container">
             <div class="row g-4 mb-5">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-5 col-md-6">
                     <a class="navbar-brand fs-3 d-flex align-items-center gap-2 mb-3" href="#">
                         <i class="bi bi-intersect text-orange"></i>
                         <span>Mito</span>verso
                     </a>
                     <p class="text-mv-muted small mb-4">
-                        Sua plataforma definitiva para exploração mitológica, criação literária e conexão entre apaixonados por folclore mundial.
+                        Mitologia, história, tecnologia e imaginação em um só lugar.
                     </p>
                     <div class="d-flex gap-3 fs-5">
                         <a href="#" class="text-mv-muted text-orange-light-hover"><i class="bi bi-discord"></i></a>
@@ -82,36 +82,35 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Navegação</h5>
                     <ul class="list-unstyled text-mv-muted small d-flex flex-column gap-2 mb-0">
-                        <li><a href="#inicio" class="text-decoration-none text-mv-muted">Início</a></li>
-                        <li><a href="#mitologias" class="text-decoration-none text-mv-muted">Mitologias</a></li>
-                        <li><a href="#recursos" class="text-decoration-none text-mv-muted">Recursos</a></li>
-                        <li><a href="#comunidade" class="text-decoration-none text-mv-muted">Comunidade</a></li>
+                        <li><a href="{{url_for('index')}}" class="text-decoration-none text-mv-muted">Início</a></li>
+                        <li><a href="{{url_for('principal')}}" class="text-decoration-none text-mv-muted">Estude</a></li>
+                        <li><a href="{{url_for('cards')}}" class="text-decoration-none text-mv-muted">Panteão</a></li>
+                        <li><a href="{{url_for('projeto')}}" class="text-decoration-none text-mv-muted">Saiba mais</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Mitologias</h5>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Mitologia</h5>
                     <ul class="list-unstyled text-mv-muted small d-flex flex-column gap-2 mb-0">
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Panteão Grego</a></li>
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Panteão Nórdico</a></li>
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Panteão Egípcio</a></li>
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Folclore Brasileiro</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">O caos</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Urano e os Titãs</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Ascensão de Cronos</a></li>
+                        <li><a href="#" class="text-decoration-none text-mv-muted">Cronos devora seus filhos</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Suporte & Legal</h5>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 fs-6 text-uppercase">Contato & Login</h5>
                     <ul class="list-unstyled text-mv-muted small d-flex flex-column gap-2 mb-0">
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Central de Ajuda</a></li>
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Termos de Uso</a></li>
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Política de Privacidade</a></li>
-                        <li><a href="#" class="text-decoration-none text-mv-muted">Contato</a></li>
+                        <li><a href="{{url_for('autenticacao.login')}}" class="text-decoration-none text-mv-muted">Login</a></li>
+                        <li><a href="mailto:mitoversoifrn2026@gmail.com" class="text-decoration-none text-mv-muted">Contato</a></li>
+                        <li><a href="{{url_for('autenticacao.cadastro')}}" class="text-decoration-none text-mv-muted">Cadastro</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-top border-dark pt-4 text-center text-mv-muted small">
-                <p class="mb-0">&copy; 2026 Mitoverso. Todos os direitos reservados. Feito com Bootstrap 5.</p>
+                <p class="mb-0">&copy; 2026 História e Tecnologia: Mitoverso: Plataforma Dinâmica de Mitologia Grega.<br>Todos os direitos reservados.<br></p>
             </div>
         </div>
     </footer>
