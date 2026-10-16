@@ -8,7 +8,7 @@
         <div class="row align-items-center gy-5">
           <div class="col-lg-6 text-center text-lg-start">
           <h1 class="display-4 fw-bold lh-sm mb-3">
-              Desvende os segredos dos <span class="text-orange">Deuses e Heróis</span> antigos
+              Desvende os segredos da <span class="text-orange">Mitologia Grega</span> aqui!
             </h1>
             <p class="lead text-mv-muted mb-4 fs-5">
               Explore mitologias fascinantes, crie narrativas épicas e conecte-se com entusiastas do folclore e da fantasia de todo o mundo.
@@ -21,7 +21,7 @@
           </div>
           <div class="col-lg-6 text-center">
             <div class="position-relative d-inline-block w-100 max-w-md">
-              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" 
+              <img src="static/img/img.jpeg"
                    alt="Mitoverso Ilustração" 
                    class="img-fluid rounded-4 shadow-lg border border-warning border-opacity-25"
                    style="max-height: 480px; object-fit: cover; width: 100%;"
@@ -35,9 +35,9 @@
     <section id="mitologias" class="py-5 my-4">
       <div class="container py-3">
         <div class="text-center max-w-2xl mx-auto mb-5">
-          <span class="text-orange text-uppercase fw-bold tracking-wider fs-7">Explore Universos</span>
-          <h2 class="display-6 fw-bold mt-1 mb-3">Panteões em Destaque</h2>
-          <p class="text-mv-muted">Mergulhe nas histórias mais icônicas da humanidade, desde os picos do Olimpo até o reino de Asgard.</p>
+          <span class="text-orange text-uppercase fw-bold tracking-wider fs-7">Explore a Mitologia</span>
+          <h2 class="display-6 fw-bold mt-1 mb-3">Personagens em Destaque</h2>
+          <p class="text-mv-muted">Mergulhe nas histórias mais icônicas da mitologia grega.</p>
         </div>
 
         <div class="row g-4">
@@ -48,9 +48,9 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Grega</h3>
-                <p class="text-mv-muted small mb-3">Zeus, Olimpo, Titãs e Heróis lendários.</p>
-                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+                <h3 class="h4 fw-bold text-white mb-1">Zeus</h3>
+                <p class="text-mv-muted small mb-3">Zeus é o deus dos céus, dos raios e do trovão.</p>
+                <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
           </div>
@@ -62,9 +62,9 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Nórdica</h3>
-                <p class="text-mv-muted small mb-3">Odin, Thor, Valhalla e o Ragnarök.</p>
-                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+                <h3 class="h4 fw-bold text-white mb-1">Poseidon</h3>
+                <p class="text-mv-muted small mb-3">Deus dos mares, dos terremotos e dos cavalos</p>
+                <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
           </div>
@@ -76,9 +76,9 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Egípcia</h3>
-                <p class="text-mv-muted small mb-3">Anúbis, Rá, Pirâmides e o Livro dos Mortos.</p>
-                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+                <h3 class="h4 fw-bold text-white mb-1">Atena</h3>
+                <p class="text-mv-muted small mb-3">Deusa da sabedoria, da estratégia militar e das artes.</p>
+                <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
           </div>
@@ -90,17 +90,16 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Japonesa</h3>
-                <p class="text-mv-muted small mb-3">Amaterasu, Yokais, Kami e Dragões.</p>
-                <a href="#" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
+                <h3 class="h4 fw-bold text-white mb-1">Hades</h3>
+                <p class="text-mv-muted small mb-3">Deus do submundo e dos mortos, é irmão de Zeus e Poseidon.</p>
+                <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
           </div>
         </div>
-        
 
         <div class="text-center mt-5">
-          <a href="gameficacao/cards.html" class="btn btn-outline-mitoverso px-4 py-2 rounded-pill">Ver Todos os Panteões</a>
+            <a href="{{url_for('cards')}}" class="btn btn-outline-mitoverso px-4 py-2 rounded-pill">Ver Todos os Personagens</a>
         </div>
       </div>
     </section>
@@ -165,14 +164,13 @@
               <i class="bi bi-compass text-orange display-4 mb-3 d-block"></i>
               <h2 class="display-6 fw-bold text-white mb-3">Pronto para iniciar sua jornada?</h2>
               <p class="text-mv-muted mb-4 fs-5">
-                Junte-se ao Mitoverso hoje e receba semanalmente histórias inéditas, análises mitológicas e novidades da plataforma.
+                Junte-se ao Mitoverso e explore a mitologia grega enquanto aprende, joga quizzes e desvenda os mistérios dos deuses, heróis e criaturas mitológicas!
               </p>
-              <form class="row g-2 justify-content-center max-w-lg mx-auto">
-                <div class="col-sm-4">
-                  <button type="submit" class="btn btn-mitoverso btn-lg w-100">Inscrever-se</button>
-                </div>
-              </form>
-              <p class="text-mv-muted small mt-3 mb-0">Respeitamos sua privacidade. Cancele sua inscrição quando quiser.</p>
+                <form class="row g-2 justify-content-center max-w-lg mx-auto">
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-mitoverso btn-lg w-100">Inscrever-se</button>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
