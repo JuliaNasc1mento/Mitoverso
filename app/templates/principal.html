@@ -3,4 +3,226 @@
 {% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/principal.css') }}"> {% endblock %}
 {% block conteudo %}
 
+<main>
+    <!-- Seção Hero -->
+    <section class="hero-section text-white text-center py-5">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <span class="badge bg-mitoverso-light text-orange mb-3 px-3 py-2 rounded-pill fw-semibold">Acervo Completo • 40 Mitos Catalogados</span>
+            <h1 class="display-4 fw-bold mb-4">Descubra as Histórias que Moldaram o Mundo</h1>
+            <p class="lead text-muted-custom mb-5">Mergulhe em panteões antigos, lendas épicas e conexões fascinantes entre mitologias de todas as eras em uma plataforma interativa.</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#catalogo" class="btn btn-outline-mitoverso btn-lg px-4 py-3 rounded-3">Teste Seus Conhecimentos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Filtros e Busca do Catálogo -->
+    <section id="catalogo" class="py-4 bg-mitoverso-dark border-bottom border-purple">
+      <div class="container">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-6">
+            <h2 class="h3 fw-bold text-white mb-1">Acervo de Mitos</h2>
+            <p class="text-muted-custom small mb-0">Explorando o total de 40 divindades, heróis e criaturas lendárias.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="d-flex gap-2">
+              <input type="text" class="form-control bg-dark border-purple text-white" placeholder="Pesquisar mito por nome..." aria-label="Pesquisar">
+              <select class="form-select bg-dark border-purple text-white w-auto" aria-label="Filtrar panteão">
+                <option selected>Todos os Panteões</option>
+                <option value="grega">Grega (10)</option>
+                <option value="nordica">Nórdica (10)</option>
+                <option value="egipcia">Egípcia (10)</option>
+                <option value="outras">Outras Culturas (10)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de Exibição dos Mitos -->
+    <section class="py-5 bg-mitoverso-dark">
+      <div class="container py-2">
+        <div class="row g-4">
+          
+          <!-- Mito 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Grega</span>
+                    <span class="text-muted-custom small">#01</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Zeus</h3>
+                  <p class="text-muted-custom small mb-4">Senhor do Olimpo, deus dos céus, dos raios e do trovão.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Nórdica</span>
+                    <span class="text-muted-custom small">#02</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Odin</h3>
+                  <p class="text-muted-custom small mb-4">O Pai de Todos, associado à sabedoria, à guerra e à poesia.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Egípcia</span>
+                    <span class="text-muted-custom small">#03</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Rá</h3>
+                  <p class="text-muted-custom small mb-4">O deus sol supremo, criador de todas as formas de vida no antigo Egito.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Grega</span>
+                    <span class="text-muted-custom small">#04</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Atenas</h3>
+                  <p class="text-muted-custom small mb-4">Deusa da sabedoria, da justiça, da estratégia e das artes tácticas.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 5 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Nórdica</span>
+                    <span class="text-muted-custom small">#05</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Thor</h3>
+                  <p class="text-muted-custom small mb-4">O deus do trovão, protetor da humanidade armado com o Mjölnir.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 6 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Egípcia</span>
+                    <span class="text-muted-custom small">#06</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Anúbis</h3>
+                  <p class="text-muted-custom small mb-4">O deus chacal dos mortos, embalsamamento e guardião das tumbas.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 7 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Grega</span>
+                    <span class="text-muted-custom small">#07</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Poseidon</h3>
+                  <p class="text-muted-custom small mb-4">Deus dos mares, dos terremotos e criador dos cavalos.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mito 8 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-mitoverso-light text-orange">Mitologia Nórdica</span>
+                    <span class="text-muted-custom small">#08</span>
+                  </div>
+                  <h3 class="h5 fw-bold mb-2">Loki</h3>
+                  <p class="text-muted-custom small mb-4">O deus da trapaça, astúcia e mestre das transformações.</p>
+                </div>
+                <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Paginação para navegação dos 40 mitos -->
+        <nav aria-label="Navegação do catálogo" class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link bg-dark text-muted border-purple" href="#" tabindex="-1">Anterior</a></li>
+            <li class="page-item active"><a class="page-link bg-mitoverso border-orange text-white" href="#">1</a></li>
+            <li class="page-item"><a class="page-link bg-dark text-orange border-purple" href="#">2</a></li>
+            <li class="page-item"><a class="page-link bg-dark text-orange border-purple" href="#">3</a></li>
+            <li class="page-item"><a class="page-link bg-dark text-orange border-purple" href="#">4</a></li>
+            <li class="page-item"><a class="page-link bg-dark text-orange border-purple" href="#">Próxima</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Seção de Recursos -->
+    <section id="recursos" class="py-5 text-white">
+      <div class="container py-4">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="fw-bold mb-3">Tudo sobre o Mitoverso</h2>
+            <p class="text-muted-custom mb-4">Uma ferramenta completa desenvolvida para entusiastas, escritores e estudiosos compararem mitos, linhagens e conexões culturais perdidas no tempo.</p>
+            <ul class="list-unstyled text-muted-custom gap-2 d-flex flex-column">
+              <li><span class="text-orange fw-bold">✓</span> Mapeamento completo de 40 divindades essenciais</li>
+              <li><span class="text-orange fw-bold">✓</span> Árvores genealógicas detalhadas de panteões</li>
+              <li><span class="text-orange fw-bold">✓</span> Biblioteca de artefatos e armas lendárias</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-5 rounded-4 bg-mitoverso-card border border-purple text-center">
+              <h3 class="h4 text-white mb-3">Pronto para começar?</h3>
+              <p class="text-muted-custom mb-4">Junte-se a milhares de pesquisadores e aventureiros mitológicos.</p>
+              <a href="projeto.html" class="btn btn-mitoverso px-4 py-2">Conhecer o Projeto Acadêmico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 {% endblock %}
