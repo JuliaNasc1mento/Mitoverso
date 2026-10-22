@@ -1,0 +1,41 @@
+/* Fundo do card de login combinando com os blocos do Mitoverso */
+.custom-card-login {
+    background-color: #1a0b2e !important; /* Tom de roxo escuro levemente destacado */
+    border: 1px solid rgba(255, 193, 7, 0.2) !important; /* Sutil contorno amarelado/laranja */
+    border-radius: 12px;
+}
+
+/* Estilização dos inputs para o tema escuro */
+.custom-input {
+    background-color: #12051f !important;
+    border: 1px solid #3d235c !important;
+    color: #f8f9fa !important;
+}
+
+.custom-input::placeholder {
+    color: #8c7aab !important;
+}
+
+.custom-input:focus {
+    background-color: #12051f !important;
+    border-color: #e67300 !important;
+    color: #f8f9fa !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25) !important;
+}
+
+/* Realce do botão amarelo/laranja inspirado no site */
+.custom-btn-warning {
+    background-color: #e67300 !important;
+    border-color: #e67300 !important;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-warning:hover {
+    background-color: #e67300 !important;
+    border-color: #e67300 !important;
+    transform: translateY(-1px);
+}
+
+.color-title{
+    color:#e67300
+}
