@@ -160,7 +160,7 @@ body {
 
 /* --- Contêiner e Logo do Cabeçalho --- */
 .logo-container-header {
-    height: 60px; /* Defina aqui a altura exata que deseja para o espaço da logo no menu */
+    height: 45px; /* Defina aqui a altura exata que deseja para o espaço da logo no menu */
     display: flex;
     align-items: center;
 }
@@ -173,7 +173,7 @@ body {
 
 /* --- Contêiner e Logo do Rodapé --- */
 .logo-container-footer {
-    height: 60px; /* Defina aqui a altura exata para a logo no rodapé */
+    height: 40px; /* Defina aqui a altura exata para a logo no rodapé */
     display: flex;
     align-items: center;
 }
