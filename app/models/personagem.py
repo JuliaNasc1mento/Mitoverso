@@ -10,9 +10,7 @@ class Personagem(db.Model):
     imagem = db.Column(db.String(255), nullable = False)
 
     id_pai = db.Column(db.Integer, db.ForeignKey("personagem.id"), nullable = True)
-
     id_mae = db.Column(db.Integer, db.ForeignKey("personagem.id"), nullable = True)
 
     pai = db.relationship("Personagem", foreign_keys = [id_pai], remote_side = [id], uselist = False)
-
     mae = db.relationship("Personagem", foreign_keys = [id_mae], remote_side = [id], uselist = False)
