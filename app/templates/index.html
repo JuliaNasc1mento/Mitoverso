@@ -21,8 +21,8 @@
           </div>
           <div class="col-lg-6 text-center">
             <div class="position-relative d-inline-block w-100 max-w-md">
-              <img src="{{ url_for('static', filename='img/img002_fundo.png') }}"
-                   alt="Fundo Mitoverso" 
+              <img src="{{ url_for('static', filename='img/img002_fundo.jpeg') }}"
+                   alt="Fundo Mitoverso"
                    class="img-fluid rounded-4 shadow-lg border border-warning border-opacity-25"
                    style="max-height: 480px; object-fit: cover; width: 100%;"
                    onerror="this.src='https://placehold.co/600x480/2b093f/ff7f00?text=Mitoverso'">
@@ -36,7 +36,7 @@
       <div class="container py-3">
         <div class="text-center max-w-2xl mx-auto mb-5">
           <span class="text-orange text-uppercase fw-bold tracking-wider fs-7">Explore a Mitologia</span>
-          <h2 class="display-6 fw-bold mt-1 mb-3">Personagens em Destaque</h2>
+          <h2 class="display-6 fw-bold mt-1 mb-3">Mitos em Destaque</h2>
           <p class="text-mv-muted">Mergulhe nas histórias mais icônicas da mitologia grega.</p>
         </div>
 
@@ -48,8 +48,8 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Zeus</h3>
-                <p class="text-mv-muted small mb-3">Zeus é o deus dos céus, dos raios e do trovão.</p>
+                <h3 class="h4 fw-bold text-white mb-1">Mito 1</h3>
+                <p class="text-mv-muted small mb-3">texto mito 1</p>
                 <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
@@ -62,8 +62,8 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Poseidon</h3>
-                <p class="text-mv-muted small mb-3">Deus dos mares, dos terremotos e dos cavalos</p>
+                <h3 class="h4 fw-bold text-white mb-1">Mito 2</h3>
+                <p class="text-mv-muted small mb-3">texto mito 2</p>
                 <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
@@ -76,8 +76,8 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Atena</h3>
-                <p class="text-mv-muted small mb-3">Deusa da sabedoria, da estratégia militar e das artes.</p>
+                <h3 class="h4 fw-bold text-white mb-1">Mito 3</h3>
+                <p class="text-mv-muted small mb-3">texto mito 3</p>
                 <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
@@ -90,8 +90,8 @@
                    alt="Mitologia Grega"
                    onerror="this.src='https://placehold.co/400x500/2b093f/ff7f00?text=Grega'">
               <div class="overlay">
-                <h3 class="h4 fw-bold text-white mb-1">Hades</h3>
-                <p class="text-mv-muted small mb-3">Deus do submundo e dos mortos, é irmão de Zeus e Poseidon.</p>
+                <h3 class="h4 fw-bold text-white mb-1">Mito 4</h3>
+                <p class="text-mv-muted small mb-3">texto mito 4</p>
                 <a href="{{url_for('principal')}}" class="btn btn-sm btn-mitoverso rounded-pill align-self-start px-3">Explorar <i class="bi bi-chevron-right ms-1"></i></a>
               </div>
             </div>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="{{url_for('cards')}}" class="btn btn-outline-mitoverso px-4 py-2 rounded-pill">Ver Todos os Personagens</a>
+            <a href="{{url_for('principal')}}" class="btn btn-outline-mitoverso px-4 py-2 rounded-pill">Ver Todos os Mitos</a>
         </div>
       </div>
     </section>
@@ -109,7 +109,7 @@
         <div class="text-center max-w-2xl mx-auto mb-5">
           <span class="text-orange text-uppercase fw-bold tracking-wider fs-7">O Que Oferecemos</span>
           <h2 class="display-6 fw-bold mt-1 mb-3">Recursos do Mitoverso</h2>
-          <p class="text-mv-muted">Ferramentas e conteúdos criados para levar sua imersão em mundos fantásticos ao próximo nível.</p>
+          <p class="text-mv-muted">Ferramentas e conteúdos criados para facilitar seu estudo e coompreensão do conteúdo.</p>
         </div>
 
         <div class="row g-4">
@@ -119,17 +119,7 @@
                 <i class="bi bi-journal-bookmark-fill text-orange fs-3"></i>
               </div>
               <h3 class="h5 fw-bold text-white mb-2">Acervo Digital</h3>
-              <p class="text-mv-muted small mb-0">Acesse uma enciclopédia completa de mitos, genealogias divinas, artefatos e criaturas mágicas.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="p-4 rounded-4 bg-mitoverso-card h-100">
-              <div class="feature-icon-wrapper">
-                <i class="bi bi-pencil-square text-orange fs-3"></i>
-              </div>
-              <h3 class="h5 fw-bold text-white mb-2">Criação de Histórias</h3>
-              <p class="text-mv-muted small mb-0">Escreva suas próprias lendas e compartilhe suas criações com uma comunidade engajada.</p>
+              <p class="text-mv-muted small mb-0">Explore histórias da mitologia grega em um acervo digital feito para aprender de forma dinâmica.</p>
             </div>
           </div>
 
@@ -138,8 +128,18 @@
               <div class="feature-icon-wrapper">
                 <i class="bi bi-person-lines-fill text-orange fs-3"></i>
               </div>
-              <h3 class="h5 fw-bold text-white mb-2">Fichas de Personagem</h3>
-              <p class="text-mv-muted small mb-0">Gere e organize atributos, habilidades e histórias de origem para jogos de RPG e literatura.</p>
+              <h3 class="h5 fw-bold text-white mb-2">Fichas de Personagens</h3>
+              <p class="text-mv-muted small mb-0">Conheça deuses, heróis, titãs e outros personagens mitológicos, descobrindo suas histórias, poderes e relações familiares.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 bg-mitoverso-card h-100">
+              <div class="feature-icon-wrapper">
+                <i class= "bi bi-pencil-square text-orange fs-3"></i>
+              </div>
+              <h3 class="h5 fw-bold text-white mb-2">Quizzes</h3>
+              <p class="text-mv-muted small mb-0">Teste seus conhecimentos sobre a mitologia grega com desafios interativos e aprenda enquanto joga.</p>
             </div>
           </div>
 
@@ -148,8 +148,8 @@
               <div class="feature-icon-wrapper">
                 <i class="bi bi-chat-left-quote-fill text-orange fs-3"></i>
               </div>
-              <h3 class="h5 fw-bold text-white mb-2">Comunidade Ativa</h3>
-              <p class="text-mv-muted small mb-0">Participe de fóruns de discussão, clubes de leitura e debates sobre folclore mundial.</p>
+              <h3 class="h5 fw-bold text-white mb-2">Forum</h3>
+              <p class="text-mv-muted small mb-0">Compartilhe ideias, tire dúvidas e converse com outros interessados pela mitologia grega.</p>
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@
               </p>
                 <form class="row g-2 justify-content-center max-w-lg mx-auto">
                     <div class="col-sm-4">
-                        <button type="submit" class="btn btn-mitoverso btn-lg w-100">Inscrever-se</button>
+                        <a href="{{url_for('principal')}}" class="btn btn-mitoverso btn-lg w-100">Comece Aqui!</a>
                     </div>
                 </form>
             </div>
