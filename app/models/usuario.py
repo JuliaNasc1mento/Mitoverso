@@ -8,4 +8,5 @@ class Usuario(UserMixin, db.Model):
     nome = db.Column(db.String(100), nullable = False)
     email = db.Column(db.String(100), nullable = False, unique = True)
     senha = db.Column(db.String(256), nullable = False)
+    foto_perfil = db.Column(db.String(255), nullable = True)
     

@@ -1,111 +1,173 @@
 {% extends 'base.html' %}
-{% block titulo %} Mitoverso | Projeto {% endblock %}
+{% block titulo %} Mitoverso | Perfil {% endblock %}
 {% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/perfil.css') }}"> {% endblock %}
 {% block conteudo %}
   
 <main class="py-5 bg-mitoverso-dark">
     <div class="container">
-        <div class="row g-4">
-            <!-- Coluna da Esquerda: Informações do Perfil -->
-            <div class="col-lg-4">
-                <div class="card bg-mitoverso-card text-white border-0 p-4 shadow-sm text-center">
-                    <div class="card-body px-0">
-                        <div class="mb-3">
-                            <img src="" 
-                                 alt="Foto de Perfil" 
-                                 class="rounded-circle profile-avatar mb-3">
-                        </div>
-                        <h1 class="h4 fw-bold text-white mb-1">Atena de Atenas</h1>
-                        <p class="text-muted-custom small mb-3">atena@mitoverso.org</p>
-                    
-                        <span class="badge bg-mitoverso-light text-orange mb-4 px-3 py-2 rounded-pill fw-semibold">
-                            Deusa da Sabedoria
-                        </span>
+        {% with mensagens = get_flashed_messages(with_categories=true) %}
+            {% for categoria, mensagem in mensagens %}
+                <div class="alert alert-{{ categoria }} alert-dismissible fade show">
+                    {{ mensagem }}
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endwith %}
 
-                        <div class="row g-2 mb-4">
-                            <div class="col-6">
-                                <div class="p-3 border border-purple rounded bg-dark">
-                                    <h5 class="mb-0 fw-bold text-white">8</h5>
-                                    <small class="text-muted-custom">Publicações</small>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-3 border border-purple rounded bg-dark">
-                                    <h5 class="mb-0 fw-bold text-white">1.4k</h5>
-                                    <small class="text-muted-custom">Seguidores</small>
-                                </div>
-                            </div>
+        <div class="row g-4">
+
+            <!-- Informações do perfil -->
+            <div class="col-lg-4">
+                <div class="card bg-mitoverso-card text-white
+                            border-0 p-4 shadow-sm text-center">
+                    <div class="card-body">
+
+                        {% if current_user.foto_perfil %}
+                            <img
+                                src="{{ url_for('static',
+                                    filename=current_user.foto_perfil) }}"
+                                alt="Foto de perfil"
+                                class="rounded-circle profile-avatar mb-3">
+                        {% else %}
+                            <img
+                                src="{{ url_for('static',
+                                    filename='img/img006_perfil_padrao.jpg') }}"
+                                alt="Foto padrão"
+                                class="rounded-circle profile-avatar mb-3">
+                        {% endif %}
+
+                        <h1 class="h4 fw-bold">
+                            {{ current_user.nome }}
+                        </h1>
+
+                        <p class="text-muted-custom small">
+                            {{ current_user.email }}
+                        </p>
+
+                        <!-- Enviar foto de perfil -->
+                        <form method="POST"
+                              action="{{ url_for('perfil.atualizar_foto') }}"
+                              enctype="multipart/form-data"
+                              class="mb-4">
+
+                            <input type="hidden" name="csrf_token"
+                                   value="{{ csrf_token() }}">
+
+                            <label for="foto" class="form-label small">
+                                Alterar foto de perfil
+                            </label>
+
+                            <input type="file" id="foto" name="foto"
+                                   class="form-control form-control-sm mb-2"
+                                   accept=".png,.jpg,.jpeg,.webp"
+                                   required>
+
+                            <button type="submit"
+                                    class="btn btn-outline-orange btn-sm w-100">
+                                Enviar foto
+                            </button>
+                        </form>
+
+                        <div class="p-3 border border-purple rounded bg-dark">
+                            <h5 class="fw-bold mb-0">
+                                {{ meus_posts|length }}
+                            </h5>
+                            <small class="text-muted-custom">
+                                Publicações
+                            </small>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Coluna da Direita: Nova Publicação + Posts Antigos -->
+            <!-- Publicações -->
             <div class="col-lg-8">
-            
-                <!-- Caixa para Nova Publicação (Apenas Texto) -->
-                <div class="card bg-mitoverso-card text-white border-0 p-4 mb-4 shadow-sm">
-                    <h2 class="h5 text-orange fw-bold mb-3">Criar Nova Publicação</h2>
-                    <form id="formPost">
+
+                <!-- Criar post -->
+                <div class="card bg-mitoverso-card text-white
+                            border-0 p-4 mb-4 shadow-sm">
+
+                    <h2 class="h5 text-orange fw-bold mb-3">
+                        Criar Nova Publicação
+                    </h2>
+
+                    <form method="POST"
+                          action="{{ url_for('perfil.publicar') }}">
+
+                        <input type="hidden" name="csrf_token"
+                               value="{{ csrf_token() }}">
+
                         <div class="mb-3">
-                            <textarea class="form-control bg-dark border-purple text-white" rows="3" placeholder="No que você está pensando sobre os mitos e panteões?" required></textarea>
+                            <textarea
+                                name="conteudo"
+                                class="form-control bg-dark border-purple text-white"
+                                rows="3"
+                                maxlength="5000"
+                                placeholder="No que você está pensando sobre os mitos e panteões?"
+                                required></textarea>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted-custom">Apenas formato de texto</small>
+
+                        <div class="d-flex justify-content-between
+                                    align-items-center">
+                            <small class="text-muted-custom">
+                                Publicação em texto
+                            </small>
+
                             <button type="submit" class="btn btn-mitoverso px-4">Publicar</button>
                         </div>
                     </form>
                 </div>
 
-                <!-- Título da Seção de Posts Antigos -->
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h5 text-white fw-bold mb-0">Minhas Publicações Anteriores</h2>
-                    <span class="badge bg-mitoverso-light text-orange">Apenas seus posts</span>
-                </div>
+                <!-- Posts do usuário -->
+                <h2 class="h5 text-white fw-bold mb-3">
+                    Minhas Publicações Anteriores
+                </h2>
 
-                <!-- Lista de Publicações Antigas -->
                 <div class="d-flex flex-column gap-3">
+                    {% for post in meus_posts %}
+                        <article class="card bg-mitoverso-card
+                                        text-white border-0 p-4 shadow-sm">
 
-                    <!-- Post 1 -->
-                    <div class="card bg-mitoverso-card text-white border-0 p-4 shadow-sm">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="" 
-                                 alt="Atena" 
-                                 class="rounded-circle post-avatar me-3">
-                            <div>
-                                <h3 class="h6 mb-0 fw-bold text-white">Atena de Atenas</h3>
-                                <small class="text-muted-custom">Há 3 horas</small>
-                            </div>
-                        </div>
-                        <p class="text-muted-custom mb-3">
-                            A verdadeira estratégia militar não busca apenas a vitória na guerra, mas a preservação da ordem e da sabedoria entre os povos do Olimpo.
-                        </p>
-                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-purple text-muted-custom small">
-                            <span>❤️ 42 Curtidas</span>
-                            <span>💬 12 Comentários</span>
-                        </div>
-                    </div>
+                            <div class="d-flex align-items-center mb-3">
+                                {% if current_user.foto_perfil %}
+                                    <img
+                                        src="{{ url_for('static',
+                                            filename=current_user.foto_perfil) }}"
+                                        alt="Foto de perfil"
+                                        class="rounded-circle post-avatar me-3">
+                                {% else %}
+                                    <img
+                                        src="{{ url_for('static',
+                                            filename='img/img006_perfil_padrao.jpg') }}"
+                                        alt="Foto padrão"
+                                        class="rounded-circle post-avatar me-3">
+                                {% endif %}
 
-                    <!-- Post 2 -->
-                    <div class="card bg-mitoverso-card text-white border-0 p-4 shadow-sm">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="" 
-                                 alt="Atena" 
-                                 class="rounded-circle post-avatar me-3">
-                            <div>
-                                <h3 class="h6 mb-0 fw-bold text-white">Atena de Atenas</h3>
-                                <small class="text-muted-custom">Ontem às 18:45</small>
+                                <div>
+                                    <h3 class="h6 mb-0 fw-bold">
+                                        {{ current_user.nome }}
+                                    </h3>
+                                    <small class="text-muted-custom">
+                                        {{ post.data_criacao.strftime('%d/%m/%Y às %H:%M') }}
+                                    </small>
+                                </div>
                             </div>
+
+                            <p class="text-muted-custom mb-0"
+                               style="white-space: pre-wrap;">{{ post.conteudo }}</p>
+                        </article>
+                    {% else %}
+                        <div class="card bg-mitoverso-card text-white
+                                    border-0 p-4 text-center">
+                            <p class="mb-1">Você ainda não publicou nada.</p>
+                            <small class="text-muted-custom">
+                                Compartilhe suas ideias sobre a mitologia grega!
+                            </small>
                         </div>
-                        <p class="text-muted-custom mb-3">
-                            Estudando novos registros comparativos entre as mitologias grega e nórdica. As semelhanças estruturais nas narrativas heroicas continuam fascinantes.
-                        </p>
-                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-purple text-muted-custom small">
-                            <span>❤️ 89 Curtidas</span>
-                            <span>💬 15 Comentários</span>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
+
             </div>
         </div>
     </div>
