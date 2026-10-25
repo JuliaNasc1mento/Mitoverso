@@ -1,1 +1,148 @@
-{% extend 'base.html'%}
+{% extends 'base.html' %}
+{% block titulo %} Mitoverso | Projeto {% endblock %}
+{% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/perfil.css') }}"> {% endblock %}
+{% block conteudo %}
+
+<main class="py-5 bg-mitoverso-dark">
+    <div class="container">
+        <div class="row g-4">
+            
+            <!-- Coluna da Esquerda: Informações Minimizadas do Usuário Logado -->
+            <div class="col-lg-4">
+                <div class="card bg-mitoverso-card text-white border-0 p-3 shadow-sm">
+                    <div class="card-body px-2 py-2">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="" 
+                                 alt="Foto de Perfil" 
+                                 class="rounded-circle profile-avatar-mini me-3">
+                            <div>
+                                <h2 class="h6 fw-bold text-white mb-0">Atena de Atenas</h2>
+                                <small class="text-muted-custom">@atena_olimpo</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between text-center py-2 border-top border-bottom border-purple mb-3">
+                            <div>
+                                <span class="d-block fw-bold text-white">8</span>
+                                <small class="text-muted-custom">Posts</small>
+                            </div>
+                            <div>
+                                <span class="d-block fw-bold text-white">1.4k</span>
+                                <small class="text-muted-custom">Seguidores</small>
+                            </div>
+                            <div>
+                                <span class="d-block fw-bold text-white">320</span>
+                                <small class="text-muted-custom">Seguindo</small>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <a href="perfil.html" class="btn btn-outline-orange btn-sm py-2">
+                                Ver Meu Perfil Completo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Navegação Rápida / Panteões -->
+                <div class="card bg-mitoverso-card text-white border-0 p-3 shadow-sm mt-4">
+                    <h3 class="h6 text-orange fw-bold mb-3"><i class="bi bi-compass me-2"></i>Panteões em Alta</h3>
+                    <ul class="list-unstyled mb-0 small gap-2 d-flex flex-column text-muted-custom">
+                        <li><a href="#" class="text-decoration-none text-muted-custom hover-orange">⚡ Mitologia Grega</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted-custom hover-orange">❄️ Mitologia Nórdica</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted-custom hover-orange">☀️ Mitologia Egípcia</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Feed Global (Publicações de Todos os Usuários) -->
+            <div class="col-lg-8">
+                
+                <!-- Caixa para Criar Nova Publicação -->
+                <div class="card bg-mitoverso-card text-white border-0 p-4 mb-4 shadow-sm">
+                    <h2 class="h5 text-orange fw-bold mb-3">Compartilhe com o Mitoverso</h2>
+                    <form id="formPostGlobal">
+                        <div class="mb-3">
+                            <textarea class="form-control bg-dark border-purple text-white" rows="3" placeholder="O que os deuses e mortais estão pensando hoje?" required></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted-custom">Visível para toda a comunidade</small>
+                            <button type="submit" class="btn btn-mitoverso px-4">Publicar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Título da Seção do Feed -->
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 class="h5 text-white fw-bold mb-0">Mural Global da Comunidade</h2>
+                    <span class="badge bg-mitoverso-light text-orange">Todos os Panteões</span>
+                </div>
+
+                <!-- Lista de Publicações de Diferentes Usuários -->
+                <div class="d-flex flex-column gap-3">
+
+                    <!-- Post de Outro Usuário (Ex: Zeus) -->
+                    <div class="card bg-mitoverso-card text-white border-0 p-4 shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="" 
+                                 alt="Zeus" 
+                                 class="rounded-circle post-avatar me-3">
+                            <div>
+                                <h3 class="h6 mb-0 fw-bold text-white">Zeus do Olimpo</h3>
+                                <small class="text-muted-custom">Há 25 minutos • Monte Olimpo</small>
+                            </div>
+                        </div>
+                        <p class="text-muted-custom mb-3">
+                            Reunião de conselho hoje no topo do monte. Alguém viu onde deixei meus relâmpagos principais? Atena, por favor, verifique seus registros. ⚡
+                        </p>
+                        <div class="d-flex align-items-center gap-4 pt-3 border-top border-purple text-muted-custom small">
+                            <button class="btn btn-link text-decoration-none text-muted-custom p-0">⚡ 128 Raios</button>
+                            <button class="btn btn-link text-decoration-none text-muted-custom p-0">💬 34 Respostas</button>
+                        </div>
+                    </div>
+
+                    <!-- Post de Outro Usuário (Ex: Thor) -->
+                    <div class="card bg-mitoverso-card text-white border-0 p-4 shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="" 
+                                 alt="Thor" 
+                                 class="rounded-circle post-avatar me-3">
+                            <div>
+                                <h3 class="h6 mb-0 fw-bold text-white">Thor Odinson</h3>
+                                <small class="text-muted-custom">Há 2 horas • Midgard</small>
+                            </div>
+                        </div>
+                        <p class="text-muted-custom mb-3">
+                            Nada se compara a um bom combate e um banquete em Valhalla após o treino diário com o Mjölnir. Quem topa uma disputa de hidromel mais tarde? 🍻
+                        </p>
+                        <div class="d-flex align-items-center gap-4 pt-3 border-top border-purple text-muted-custom small">
+                            <button class="btn btn-link text-decoration-none text-muted-custom p-0">⚡ 256 Curtidas</button>
+                            <button class="btn btn-link text-decoration-none text-muted-custom p-0">💬 48 Respostas</button>
+                        </div>
+                    </div>
+
+                    <!-- Post do Próprio Usuário (Atena) no Feed Geral -->
+                    <div class="card bg-mitoverso-card text-white border-0 p-4 shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="" 
+                                 alt="Atena" 
+                                 class="rounded-circle post-avatar me-3">
+                            <div>
+                                <h3 class="h6 mb-0 fw-bold text-white">Atena de Atenas</h3>
+                                <small class="text-muted-custom">Há 3 horas • Olimpo</small>
+                            </div>
+                        </div>
+                        <p class="text-muted-custom mb-3">
+                            A verdadeira estratégia militar não busca apenas a vitória na guerra, mas a preservação da ordem e da sabedoria entre os povos do Olimpo.
+                        </p>
+                        <div class="d-flex align-items-center gap-4 pt-3 border-top border-purple text-muted-custom small">
+                            <button class="btn btn-link text-decoration-none text-muted-custom p-0">❤️ 42 Curtidas</button>
+                            <button class="btn btn-link text-decoration-none text-muted-custom p-0">💬 12 Comentários</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

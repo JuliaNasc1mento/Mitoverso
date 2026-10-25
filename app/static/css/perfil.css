@@ -1,144 +1,79 @@
-/* Fundo da página */
-body{
-    background-color:#f5f6fa;
+body {
+    background-color: #1a0526;
+    color: #ffffff;
 }
 
-/* ---------- Cards ---------- */
-.card{
-    border:none;
-    border-radius:18px;
-    transition:.3s;
+.bg-mitoverso-dark {
+    background-color: #1a0526;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 .8rem 1.5rem rgba(0,0,0,.12);
+.bg-mitoverso-card {
+    background-color: #240735;
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ---------- Perfil ---------- */
-.card-perfil{
-    background:white;
+.bg-mitoverso-light {
+    background-color: rgba(255, 127, 0, 0.1);
 }
 
-.card-perfil img{
-    border:5px solid var(--laranja);
-    object-fit:cover;
+.text-orange {
+    color: #ff7f00 !important;
 }
 
-.card-perfil h2{
-    color:var(--roxo);
-    font-weight:700;
+.text-muted-custom {
+    color: #c4b5fd !important;
 }
 
-.card-perfil p{
-    color:var(--cinza);
+.border-purple {
+    border-color: #3b0764 !important;
 }
 
-/* ---------- Badge Nível ---------- */
-.badge-nivel{
-    background:var(--laranja);
-    color:#fff;
-    padding:.6rem 1rem;
-    border-radius:50px;
-    font-size:1rem;
+.btn-mitoverso {
+    background-color: #ff7f00;
+    border-color: #ff7f00;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
 }
 
-/* ---------- Botão ---------- */
-.btn-outline-warning{
-    border:2px solid var(--laranja);
-    color:var(--laranja);
-    font-weight:600;
+.btn-mitoverso:hover {
+    background-color: #e67300;
+    border-color: #e67300;
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
-.btn-outline-warning:hover{
-    background:var(--laranja);
-    color:white;
+.btn-outline-orange {
+    color: #ff7f00;
+    border-color: #ff7f00;
+    transition: all 0.2s ease;
 }
 
-/* ---------- Barra de progresso ---------- */
-.progress{
-    height:25px;
-    border-radius:20px;
-    background:#ddd;
+.btn-outline-orange:hover {
+    background-color: #ff7f00;
+    color: #ffffff;
 }
 
-.progress-bar{
-    background:linear-gradient(
-        90deg,
-        var(--laranja),
-        var(--roxo)
-    );
-
-    font-weight:600;
+/* Estilos específicos da Tela de Perfil */
+.profile-avatar {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 3px solid #ff7f00;
+    box-shadow: 0 0 20px rgba(255, 127, 0, 0.25);
 }
 
-/* ---------- Estatísticas ---------- */
-.estatistica{
-    text-align:center;
+.post-avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 2px solid rgba(147, 51, 234, 0.5);
 }
 
-.estatistica h1{
-    font-size:3rem;
-}
-
-.estatistica h3{
-    color:var(--roxo);
-    font-weight:bold;
-}
-
-.estatistica p{
-    color:var(--cinza);
-    margin:0;
-}
-
-/* ---------- Títulos ---------- */
-.card-header{
-    background:var(--roxo);
-    color:white;
-    border:none;
-    font-weight:bold;
-    border-radius:18px 18px 0 0 !important;
-}
-
-/* ---------- Tabela ---------- */
-.table thead{
-    background:var(--laranja);
-}
-
-.table th{
-    color:white;
-}
-
-.table-hover tbody tr:hover{
-    background:#f8f0ff;
-}
-
-/* ---------- Conquistas ---------- */
-.conquistas span{
-    margin:10px;
-    transition:.3s;
-    cursor:pointer;
-}
-
-.conquistas span:hover{
-    transform:scale(1.25);
-}
-
-/* ---------- Avatar ---------- */
-.avatar{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-/* ---------- Responsividade ---------- */
-@media(max-width:768px){
-    .card-perfil{
-        text-align:center;
-    }
-
-    .avatar{
-        margin-bottom:20px;
-    }
+.form-control.bg-dark:focus {
+    background-color: #1a0526 !important;
+    border-color: #ff7f00 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 127, 0, 0.25);
+    color: #ffffff !important;
 }

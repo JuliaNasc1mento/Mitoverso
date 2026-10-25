@@ -21,11 +21,11 @@ login_manager.init_app(app)
 
 login_manager.login_view = "autenticacao.login"
 
-# Rotas
+# Rotas de login e cadastro considerando o uso de Blueprints
 from app.routes.autenticacao import autenticacao_bp
 app.register_blueprint(autenticacao_bp)
 
-# Página inicial
+# Rotas das páginas vinculadas a pasta "templates"
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -34,14 +34,23 @@ def index():
 def principal():
     return render_template("principal.html")
 
-@app.route("/cards")
-def cards():
-    return render_template("gameficacao/cards.html")
-
 @app.route("/projeto")
 def projeto():
     return render_template("projeto.html")
 
+#Rotas das páginas vinculadas a pasta "gameficação"
+@app.route("/cards")
+def cards():
+    return render_template("gameficacao/cards.html")
+
+# Rotas das páginas Vinculadas a pasta "usuario"
+@app.route("/perfil")
+def perfil():
+    return render_template("usuario/perfil.html")
+
+@app.route("/posts")
+def posts():
+    return render_template("usuario/post.html")
 
 # Modelos
 from app import models

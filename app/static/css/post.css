@@ -1,0 +1,93 @@
+body {
+    background-color: #1a0526;
+    color: #ffffff;
+}
+
+.bg-mitoverso-dark {
+    background-color: #1a0526;
+}
+
+.bg-mitoverso-card {
+    background-color: #240735;
+    border: 1px solid rgba(147, 51, 234, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-mitoverso-light {
+    background-color: rgba(255, 127, 0, 0.1);
+}
+
+.text-orange {
+    color: #ff7f00 !important;
+}
+
+.text-muted-custom {
+    color: #c4b5fd !important;
+}
+
+.border-purple {
+    border-color: #3b0764 !important;
+}
+
+.btn-mitoverso {
+    background-color: #ff7f00;
+    border-color: #ff7f00;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-mitoverso:hover {
+    background-color: #e67300;
+    border-color: #e67300;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-outline-orange {
+    color: #ff7f00;
+    border-color: #ff7f00;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-orange:hover {
+    background-color: #ff7f00;
+    color: #ffffff;
+}
+
+/* Estilos específicos da Tela de Perfil */
+.profile-avatar {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 3px solid #ff7f00;
+    box-shadow: 0 0 20px rgba(255, 127, 0, 0.25);
+}
+
+.post-avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 2px solid rgba(147, 51, 234, 0.5);
+}
+
+.form-control.bg-dark:focus {
+    background-color: #1a0526 !important;
+    border-color: #ff7f00 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 127, 0, 0.25);
+    color: #ffffff !important;
+}
+
+/* Estilos específicos para o Feed Global / Mini-perfil */
+.profile-avatar-mini {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border: 2px solid #ff7f00;
+  box-shadow: 0 0 10px rgba(255, 127, 0, 0.2);
+}
+
+.hover-orange:hover {
+  color: #ff7f00 !important;
+  transition: color 0.2s ease;
+}
