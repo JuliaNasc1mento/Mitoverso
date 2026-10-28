@@ -9,8 +9,7 @@
             {% for categoria, mensagem in mensagens %}
                 <div class="alert alert-{{ categoria }} alert-dismissible fade show">
                     {{ mensagem }}
-                    <button type="button" class="btn-close"
-                            data-bs-dismiss="alert"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
             {% endfor %}
         {% endwith %}
@@ -63,9 +62,15 @@
                                    accept=".png,.jpg,.jpeg,.webp"
                                    required>
 
-                            <button type="submit"
-                                    class="btn btn-outline-orange btn-sm w-100">
+                            <button type="submit" class="btn btn-outline-orange btn-sm w-100">
                                 Enviar foto
+                            </button>
+                        </form>
+
+                        <form method="POST" action="{{ url_for('autenticacao.logout') }}">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-outline-orange btn-sm w-100">
+                                Sair da conta
                             </button>
                         </form>
 
