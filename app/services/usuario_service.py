@@ -18,3 +18,19 @@ def cadastrar_usuario(nome, email, senha):
 
 def verificar_senha(usuario, senha):
     return check_password_hash(usuario.senha, senha)
+
+def alternar_seguir(usuario, alvo):
+    if alvo in usuario.seguindo:
+        usuario.seguindo.remove(alvo)
+        db.session.commit()
+        return False
+
+    usuario.seguindo.append(alvo)
+    db.session.commit()
+    return True
+
+
+def atualizar_perfil(usuario, nome, bio):
+    usuario.nome = nome
+    usuario.bio = bio or None
+    db.session.commit()
