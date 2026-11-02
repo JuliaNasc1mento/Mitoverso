@@ -25,18 +25,12 @@ def cadastro():
     if form.validate_on_submit():
         nome = form.nome.data.strip()
         email = form.email.data.strip().lower()
-
         usuario = buscar_por_email(email)
 
         if usuario:
             flash("E-mail já cadastrado.", "warning")
         else:
-            cadastrar_usuario(
-                nome,
-                email,
-                form.senha.data
-            )
-
+            cadastrar_usuario(nome, email, form.senha.data)
             flash("Cadastro realizado com sucesso!", "success")
             return redirect(url_for("autenticacao.login"))
 
@@ -53,7 +47,7 @@ def login():
 
         if usuario and verificar_senha(usuario, form.senha.data):
             login_user(usuario)
-            return redirect(url_for("principal"))
+            return redirect(url_for("perfil"))
 
         flash("E-mail ou senha incorretos.", "danger")
 

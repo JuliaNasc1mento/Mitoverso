@@ -1,18 +1,25 @@
 {% extends 'base.html' %}
 {% block titulo %} Mitoverso | Login {% endblock %}
-{% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/login.css') }}"> {% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">{% endblock %}
+
 {% block conteudo %}
 
-<main class="flex-grow-1 d-flex align-items-center justify-content-center py-5 position-relative overflow-hidden image-back">
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(18, 5, 31, 0.75); z-index: 1;"></div>
-    <div class="container position-relative" style="z-index: 2;">
+<div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 position-relative overflow-hidden image-back">
+
+    <!-- Sobreposição para escurecer levemente a imagem -->
+    <div class="login-overlay"></div>
+
+    <!-- Formulário -->
+    <div class="container position-relative login-content">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4">
-                
+
                 <!-- Card de login -->
                 <div class="card p-4 shadow-lg border-0 custom-card-login">
-                    
-                    <h3 class="text-center fw-bold text-warning mb-4" style="color: #e67300">Login</h3>
+
+                    <h3 class="text-center fw-bold text-warning mb-4">
+                        Login
+                    </h3>
 
                     {% with mensagens = get_flashed_messages(with_categories=true) %}
                         {% for categoria, mensagem in mensagens %}
@@ -43,13 +50,14 @@
 
                     <p class="text-center mt-3 small text-light">
                         Não tem conta?
-                        <a href="{{ url_for('autenticacao.cadastro') }}" class="text-warning text-decoration-none fw-semibold" style="color: #e67300">
+                        <a href="{{ url_for('autenticacao.cadastro') }}" class="text-warning text-decoration-none fw-semibold">
                             Cadastre-se
                         </a>
                     </p>
+
                 </div>
             </div>
         </div>
     </div>
-</main>
+</div>
 {% endblock %}

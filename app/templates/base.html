@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cab_rod_index.css') }}">                       <!-- CSS cabeçario, rodapé e index -->
     {% block css %} {% endblock %}
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!--  Cabeçario -->
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-mitoverso-nav border-bottom border-dark border-opacity-50 py-3">
@@ -54,9 +54,9 @@
             </div>
         </nav>
     </header>
-
+    
     <!-- Principal -->
-    <main>
+    <main class="flex-grow-1 d-flex flex-column">
         {% block conteudo %} {% endblock %}
     </main>
 

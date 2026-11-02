@@ -2,8 +2,7 @@
 {% block titulo %} Mitoverso | Cadastro {% endblock %}
 {% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/cadastro.css') }}"> {% endblock %}
 {% block conteudo %}
-
-<main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+<div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 position-relative overflow-hidden image-back">
     <section class="hero w-100 d-flex align-items-center">
         <div class="container">
             <div class="row justify-content-center">
@@ -79,5 +78,5 @@
             </div>
         </div>
     </section>
-</main>
+</div>
 {% endblock %}
