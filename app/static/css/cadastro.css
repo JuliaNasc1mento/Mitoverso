@@ -1,0 +1,66 @@
+.custom-card-cadastro {
+    background-color: rgba(26, 11, 46, 0.85) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 193, 7, 0.2) !important;
+    border-radius: 12px;
+}
+
+/* Campos de texto */
+.custom-input {
+    background-color: #12051f !important;
+    border: 1px solid #3d235c !important;
+    color: #f8f9fa !important;
+}
+
+.custom-input::placeholder {
+    color: #8c7aab !important;
+}
+
+.custom-input:focus {
+    border-color: #e67300 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25) !important;
+}
+
+/* Botão */
+.custom-btn-warning {
+    background-color: #e67300 !important;
+    border-color: #e67300 !important;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-warning:hover {
+    background-color: #e67300 !important;
+    border-color: #e67300 !important;
+    transform: translateY(-1px);
+}
+
+/* Imagem de fundo da página inteira */
+body:has(.image-back) {
+    background-image: url('/static/img/img03 - fundo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #1a0528;
+}
+
+/* Área do formulário */
+.image-back {
+    background: transparent !important;
+    flex: 1;
+}
+
+/* Sobreposição escura */
+.login-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(18, 5, 31, 0.45);
+    z-index: 1;
+}
+
+/* Conteúdo acima da sobreposição */
+.login-content {
+    position: relative;
+    z-index: 2;
+}

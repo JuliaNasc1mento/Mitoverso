@@ -42,6 +42,5 @@ def cards():
 def projeto():
     return render_template("projeto.html")
 
-
 # Modelos
 from app import models

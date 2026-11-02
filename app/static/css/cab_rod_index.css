@@ -22,8 +22,15 @@ body {
 }
     
 .bg-mitoverso-nav {
-    background: rgba(27, 8, 40, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(20, 7, 35, 0.75) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+footer.bg-mitoverso-dark {
+    background-color: rgba(20, 7, 35, 0.75) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .bg-mitoverso-gradient {
