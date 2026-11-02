@@ -37,7 +37,7 @@
 
 /* Imagem de fundo da página inteira */
 body:has(.image-back) {
-    background-image: url('/static/img/img03 - fundo.png');
+    background-image: url('/static/img/img007 - fundo.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
