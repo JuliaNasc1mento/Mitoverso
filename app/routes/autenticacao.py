@@ -47,7 +47,7 @@ def login():
 
         if usuario and verificar_senha(usuario, form.senha.data):
             login_user(usuario)
-            return redirect(url_for("perfil"))
+            return redirect(url_for("principal"))
 
         flash("E-mail ou senha incorretos.", "danger")
 
