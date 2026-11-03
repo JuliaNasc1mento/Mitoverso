@@ -1,0 +1,53 @@
+{# Card de post. Use dentro de um for com a variável "post". #}
+<article class="post-card" id="post-{{ post.id }}">
+    <a href="{{ url_for('perfil.ver_perfil', id_usuario=post.autor.id) }}" class="avatar-inicial" aria-label="Perfil de {{ post.autor.nome }}">
+        {{ post.autor.nome[0]|upper }}
+    </a>
+
+    <div class="post-corpo">
+        <div class="post-cabecalho">
+            <a href="{{ url_for('perfil.ver_perfil', id_usuario=post.autor.id) }}" class="post-autor">{{ post.autor.nome }}</a>
+            <span class="post-data">· {{ post.criado_em|tempo_atras }}</span>
+        </div>
+
+        {% if post.pai and mostrar_pai|default(true) %}
+            <a href="{{ url_for('posts.ver_post', id_post=post.pai.id) }}" class="post-resposta-a">
+                <i class="bi bi-reply-fill"></i> Respondendo a {{ post.pai.autor.nome }}
+            </a>
+        {% endif %}
+
+        <a href="{{ url_for('posts.ver_post', id_post=post.id) }}" class="post-texto-link">
+            <p class="post-texto">{{ post.conteudo }}</p>
+        </a>
+
+        <div class="post-acoes">
+            <a href="{{ url_for('posts.ver_post', id_post=post.id) }}" class="acao">
+                <i class="bi bi-chat"></i> {{ post.respostas|length }}
+            </a>
+
+            {% if current_user.is_authenticated %}
+                <form action="{{ url_for('posts.curtir', id_post=post.id) }}" method="POST" class="d-inline">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="next" value="{{ request.full_path|trim('?') }}#post-{{ post.id }}">
+                    <button type="submit" class="acao {{ 'curtido' if post.curtido_por(current_user) }}" aria-label="Curtir">
+                        <i class="bi {{ 'bi-heart-fill' if post.curtido_por(current_user) else 'bi-heart' }}"></i> {{ post.curtidas|length }}
+                    </button>
+                </form>
+            {% else %}
+                <a href="{{ url_for('autenticacao.login') }}" class="acao">
+                    <i class="bi bi-heart"></i> {{ post.curtidas|length }}
+                </a>
+            {% endif %}
+
+            {% if current_user.is_authenticated and current_user.id == post.id_usuario %}
+                <form action="{{ url_for('posts.excluir', id_post=post.id) }}" method="POST" class="d-inline ms-auto"
+                      onsubmit="return confirm('Excluir este post? As respostas dele também serão apagadas.');">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button type="submit" class="acao acao-excluir" aria-label="Excluir post">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</article>

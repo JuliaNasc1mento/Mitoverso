@@ -30,7 +30,7 @@
                         {% endfor %}
                     {% endwith %}
 
-                    <form action="{{ url_for('autenticacao.login') }}" method="POST">
+                    <form action="{{ url_for('autenticacao.login'), next=request.args.get('next') }}" method="POST">
                         {{ form.hidden_tag() }}
 
                         <div class="mb-3">
