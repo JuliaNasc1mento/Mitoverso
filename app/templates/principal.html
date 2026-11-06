@@ -3,4 +3,51 @@
 {% block css %} <link rel="stylesheet"href="{{ url_for('static', filename='css/principal.css') }}"> {% endblock %}
 {% block conteudo %}
 
+<main>
+    <!-- Seção de Filtros e Busca do Catálogo -->
+    <section id="catalogo" class="py-4 bg-mitoverso-dark border-bottom border-purple">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-6">
+                    <h2 class="h3 fw-bold text-white mb-1">Acervo de Mitos</h2>
+                    <p class="text-muted-custom small mb-0">Explorando o total de 40 mitos.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex gap-2">
+                        <input type="text" class="form-control bg-dark border-purple text-white cor-text-placeholder" placeholder="Pesquisar mito por nome..." aria-label="Pesquisar">
+                        <select class="form-select bg-dark border-purple text-white w-auto" aria-label="Filtrar panteão">
+                            <option selected>Todos os Mitos</option>
+                            <option value="#">...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Exibição dos Mitos -->
+    <section class="py-5 bg-mitoverso-dark">
+        <div class="container py-2">
+            <div class="row g-4">
+            
+                <!-- Mito -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-mitoverso-light text-orange">Mitologia Grega</span>
+                                    <span class="text-muted-custom small">#01</span>
+                                </div>
+                                <h3 class="h5 fw-bold mb-2">Zeus</h3>
+                                <p class="text-muted-custom small mb-4">Senhor do Olimpo, deus dos céus, dos raios e do trovão.</p>
+                            </div>
+                            <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}

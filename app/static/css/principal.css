@@ -1,0 +1,57 @@
+.hero-section {
+  background: radial-gradient(circle at center, #3c0c59 0%, #1a0526 100%);
+}
+
+.bg-mitoverso-dark {
+  background-color: #1a0526;
+}
+
+.bg-mitoverso-card {
+  background-color: #240735;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.myth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 127, 0, 0.15) !important;
+  border-color: rgba(255, 127, 0, 0.4);
+}
+
+.bg-mitoverso-light {
+  background-color: rgba(255, 127, 0, 0.1);
+}
+
+.text-orange {
+  color: #ff7f00 !important;
+}
+
+.text-muted-custom {
+  color: #c4b5fd !important;
+}
+
+.border-purple {
+  border-color: #3b0764 !important;
+}
+
+.btn-outline-orange {
+  color: #ff7f00;
+  border-color: #ff7f00;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-orange:hover {
+  background-color: #ff7f00;
+  color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #1a0526 !important;
+  border-color: #ff7f00 !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 127, 0, 0.25);
+  color: #ffffff !important;
+}
+
+.cor-text::placeholder{
+  color: #8c7aab !important;
+}
