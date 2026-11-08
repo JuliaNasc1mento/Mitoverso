@@ -30,6 +30,8 @@ app.register_blueprint(autenticacao_bp)
 app.register_blueprint(perfil_bp)
 app.register_blueprint(posts_bp)
 
+from app.models.mito import Mito
+
 # Filtro para mostrar "há quanto tempo" um post foi publicado
 @app.template_filter("tempo_atras")
 def tempo_atras(data):
@@ -64,7 +66,14 @@ def index():
 
 @app.route("/principal")
 def principal():
-    return render_template("principal.html")
+    mitos = Mito.query.order_by(Mito.id.asc()).all()
+    return render_template("principal.html", mitos = mitos)
+
+@app.route("/mito/<int:mito_id>")
+def detalhes_mito(mito_id):
+    mito = Mito.query.get_or_404(mito_id)
+
+    return render_template("mito.html", mito = mito)
 
 @app.route("/cards")
 def cards():

@@ -17,7 +17,6 @@
                         <input type="text" class="form-control bg-dark border-purple text-white cor-text-placeholder" placeholder="Pesquisar mito por nome..." aria-label="Pesquisar">
                         <select class="form-select bg-dark border-purple text-white w-auto" aria-label="Filtrar panteão">
                             <option selected>Todos os Mitos</option>
-                            <option value="#">...</option>
                         </select>
                     </div>
                 </div>
@@ -25,27 +24,54 @@
         </div>
     </section>
 
-    <!-- Grid de Exibição dos Mitos -->
+    <!-- Catálogo de mitos -->
     <section class="py-5 bg-mitoverso-dark">
         <div class="container py-2">
             <div class="row g-4">
-            
-                <!-- Mito -->
+                {% for mito in mitos %}
+
                 <div class="col-md-6 col-lg-3">
-                    <div class="card bg-mitoverso-card text-white border-0 h-100 shadow-sm myth-card">
+                    <div class="card bg-mitoverso-card text-white border-purple h-100 shadow-sm myth-card overflow-hidden">
+                        {% if mito.imagem %}
+                        <div class="position-relative overflow-hidden bg-dark">
+                            <img src="{{ url_for('static', filename=mito.imagem) }}"
+                                class="card-img-top w-100"
+                                alt="{{ mito.titulo }}"
+                                style="height: 200px; object-fit: cover; object-position: center 20%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+                        </div>
+                        {% endif %}
+
                         <div class="card-body p-4 d-flex flex-column justify-content-between">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <span class="badge bg-mitoverso-light text-orange">Mitologia Grega</span>
-                                    <span class="text-muted-custom small">#01</span>
+                                    <span class="text-muted-custom small text-end text">
+                                        #{{ "%02d" | format(loop.index) }}
+                                    </span>
                                 </div>
-                                <h3 class="h5 fw-bold mb-2">Zeus</h3>
-                                <p class="text-muted-custom small mb-4">Senhor do Olimpo, deus dos céus, dos raios e do trovão.</p>
+
+                                <h3 class="h5 fw-bold mb-2">{{ mito.titulo }}</h3>
+
+                                <p class="text-muted-custom small mb-4">{{ mito.resumo }}</p>
                             </div>
-                            <a href="#" class="btn btn-outline-orange btn-sm w-100">Ver Detalhes</a>
+
+                            <a
+                                href="{{ url_for('detalhes_mito', mito_id=mito.id) }}"
+                                class="btn btn-outline-orange btn-sm w-100">
+                                Explorar mais
+                            </a>
                         </div>
                     </div>
                 </div>
+                {% else %}
+
+                <div class="col-12 text-center py-5">
+                    <h3 class="text-white">Nenhum mito cadastrado</h3>
+
+                    <p class="text-muted-custom">
+                        Os mitos aparecerão aqui assim que forem adicionados ao acervo.
+                    </p>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

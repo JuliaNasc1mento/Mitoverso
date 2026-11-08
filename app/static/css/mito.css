@@ -1,0 +1,23 @@
+.text{
+    text-align: justify;
+    text-indent: 40px;
+}
+
+.resumo{
+    text-align: justify;
+}
+
+.btn-outline-orange {
+  color: #ff7f00;
+  border-color: #ff7f00;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-orange:hover {
+  background-color: #ff7f00;
+  color: #ffffff;
+}
+
+.border-purple {
+  border-color: #3b0764 !important;
+}
