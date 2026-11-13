@@ -7,3 +7,7 @@ venvmitoverso/
 
 # Variáveis de ambiente
 .env
+.venv/
+__pycache__/
+*.pyc
+instance/

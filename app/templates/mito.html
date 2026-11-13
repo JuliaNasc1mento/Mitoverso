@@ -5,7 +5,6 @@
 {% block conteudo %}
 <main class="bg-mitoverso-dark py-5">
     <div class="container">
-        
         <!-- Botão Voltar -->
         <a href="{{ url_for('principal') }}" class="btn btn-outline-orange mb-4 d-inline-flex align-items-center gap-2">Voltar ao acervo</a>
 
@@ -13,22 +12,22 @@
         <article class="card bg-mitoverso-card text-white border-purple shadow-lg overflow-hidden">
             <div class="card-body p-4 p-lg-5">
                 
-                <!-- Grade Superior: Imagem Ampliada à Esquerda e Conteúdo à Direita (Top Aligned) -->
+                <!-- Grade Superior: Imagem Ampliada à Esquerda e Conteúdo à Direita -->
                 <div class="row g-4 align-items-start mb-5">
                     
-                    <!-- Coluna da Imagem Expandida (50% da largura em telas grandes) -->
+                    <!-- Coluna da Imagem Expandida -->
                     {% if mito.imagem %}
                     <div class="col-lg-5">
                         <div class="position-relative text-center">
                             <img src="{{ url_for('static', filename=mito.imagem) }}" 
-                                 alt="{{ mito.titulo }}" 
-                                 class="img-fluid rounded-3 border border-purple shadow w-100"
-                                 style="max-height: 450px; object-fit: cover; object-position: center;">
+                            alt="{{ mito.titulo }}" 
+                            class="img-fluid rounded-3 border border-purple shadow w-100"
+                            style="max-height: 450px; object-fit: cover; object-position: center;">
                         </div>
                     </div>
                     {% endif %}
 
-                    <!-- Coluna de Texto e Metadados (Alinhada com o topo da imagem) -->
+                    <!-- Coluna de Texto e Metadados -->
                     <div class="col-lg-{% if mito.imagem %}6{% else %}12{% endif %} d-flex flex-column justify-content-between">
                         <div>
                             <!-- Tags e Categoria -->
@@ -72,17 +71,15 @@
                 <!-- Seção Principal da História -->
                 <section class="mt-4">
                     <h2 class="h4 text-orange mb-4 d-flex align-items-center gap-2">
-                        <i class="bi bi-journal-text"></i> A história
+                        <i class="bi bi-journal-text"></i> A História
                     </h2>
 
                     <div class="text-white fs-6 lh-lg pe-lg-3 text">
                         {{ mito.conteudo }}
                     </div>
                 </section>
-
             </div>
         </article>
-
     </div>
 </main>
 {% endblock %}

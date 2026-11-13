@@ -83,5 +83,30 @@ def cards():
 def projeto():
     return render_template("projeto.html")
 
+# Rotas da pasta cards de personagens
+@app.route("/deuses")
+def deuses():
+    return render_template("gameficacao/deusescards.html")
+
+@app.route("/espiritos")
+def espiritos():
+    return render_template("gameficacao/espiritoscards.html")
+
+@app.route("/herois")
+def herois():
+    return render_template("gameficacao/heroiscards.html")
+
+@app.route("/monstros")
+def monstros():
+    return render_template("gameficacao/monstroscards.html")
+
+@app.route("/primordiais")
+def primordiais():
+    return render_template("gameficacao/primordiaiscards.html")
+
+@app.route("/titas")
+def titas():
+    return render_template("gameficacao/titascards.html")
+
 # Modelos
 from app import models

@@ -1,0 +1,74 @@
+:root {
+    --mv-bg-dark: #140724;
+    --mv-card-glass: rgba(36, 16, 64, 0.55);
+    --mv-border-glass: rgba(255, 107, 0, 0.3);
+    --mv-accent: #ff6b00;       /* Laranja puro e vibrante */
+    --mv-accent-hover: #ff8533;  /* Tom mais claro para hover */
+}
+
+body {
+    background-color: var(--mv-bg-dark);
+    color: #f8f9fa;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.panteao-hero {
+    background: radial-gradient(circle at top center, rgba(124, 58, 237, 0.22) 0%, transparent 70%);
+    min-height: 100vh;
+}
+
+.mv-card-categoria {
+    background: var(--mv-card-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--mv-border-glass);
+    border-radius: 1rem;
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.mv-card-categoria:hover {
+    transform: translateY(-6px);
+    border-color: var(--mv-accent);
+    box-shadow: 0 12px 28px rgba(255, 107, 0, 0.2);
+}
+
+.mv-icon-badge {
+    width: 54px;
+    height: 54px;
+    border-radius: 0.75rem;
+    background: rgba(255, 107, 0, 0.12);
+    border: 1px solid rgba(255, 107, 0, 0.35);
+    color: var(--mv-accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.btn-mv-outline {
+    color: var(--mv-accent);
+    border: 1px solid var(--mv-accent);
+    background: transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.btn-mv-outline:hover {
+    background: var(--mv-accent);
+    color: #140724;
+    font-weight: 600;
+}
+
+.mv-progress {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+}
+
+.mv-progress-bar {
+    background: linear-gradient(90deg, #ff4500, #ff6b00);
+}
