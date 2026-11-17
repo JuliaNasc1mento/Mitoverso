@@ -37,7 +37,7 @@
 
 /* Imagem de fundo da página inteira */
 body:has(.image-back) {
-    background-image: url('/static/img/img007 - fundo.png');
+    background-image: url('/static/img/img004_fundo_log_cad.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,7 +52,7 @@ body:has(.image-back) {
 }
 
 /* Sobreposição escura */
-.login-overlay {
+.cadastro-overlay {
     position: absolute;
     inset: 0;
     background-color: rgba(18, 5, 31, 0.45);
