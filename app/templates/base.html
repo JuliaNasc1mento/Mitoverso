@@ -51,13 +51,33 @@
                     <!-- Action Buttons -->
                     <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
                         {% if current_user.is_authenticated %}
-                            <a href="{{url_for('perfil.meu_perfil')}}" class="btn btn-outline-light btn-sm px-3 py-2 border-0 text-light fw-medium text-orange">
-                                <i class="bi bi-person-circle me-1"></i>{{ current_user.nome.split()[0] }}
-                            </a>
-                            <form action="{{url_for('autenticacao.logout')}}" method="POST" class="m-0">
-                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-mitoverso btn-sm px-4 py-2 shadow-sm rounded-pill">Sair</button>
-                            </form>
+                            <!-- Dropdown do usuário logado -->
+                            <div class="dropdown">
+                                <button class="btn btn-outline-light btn-sm px-3 py-2 border-0 text-orange fw-medium dropdown-toggle"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="bi bi-person-circle me-1"></i>{{ current_user.nome.split()[0] }}
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-mitoverso">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url_for('perfil.meu_perfil') }}">
+                                            <i class="bi bi-person me-2"></i>Perfil
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <!-- Logout precisa ser POST com csrf_token -->
+                                        <form action="{{ url_for('autenticacao.logout') }}" method="POST" class="m-0">
+                                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bi bi-box-arrow-right me-2"></i>Sair
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
                         {% else %}
                             <a href="{{url_for('autenticacao.login')}}" class="btn btn-outline-light btn-sm px-3 py-2 border-0 text-light fw-medium text-orange">Entrar</a>
                             <a href="{{url_for('principal')}}" class="btn btn-mitoverso btn-sm px-4 py-2 shadow-sm rounded-pill">Começar</a>
