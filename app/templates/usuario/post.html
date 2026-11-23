@@ -34,14 +34,6 @@
             </div>
         {% endif %}
 
-        <!-- Abas -->
-        <div class="abas">
-            <a href="{{ url_for('posts.feed') }}" class="{{ 'ativa' if aba == 'todos' }}">Todos</a>
-            {% if current_user.is_authenticated %}
-                <a href="{{ url_for('posts.feed', aba='seguindo') }}" class="{{ 'ativa' if aba == 'seguindo' }}">Seguindo</a>
-            {% endif %}
-        </div>
-
         <!-- Lista de posts -->
         <div class="painel lista-posts">
             {% for post in paginacao.items %}

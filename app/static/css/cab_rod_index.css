@@ -190,3 +190,30 @@ footer.bg-mitoverso-dark {
     width: auto !important;
     object-fit: contain;
 }
+
+/* --- Dropdown do usuário --- */
+.dropdown-mitoverso {
+    background-color: var(--mv-purple-main);
+    border: 1px solid rgba(255, 127, 0, 0.25);
+    border-radius: 0.75rem;
+    min-width: 11rem;
+    padding: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-mitoverso .dropdown-item {
+    color: #e0d5ec;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+}
+
+.dropdown-mitoverso .dropdown-item:hover,
+.dropdown-mitoverso .dropdown-item:focus {
+    background-color: rgba(255, 127, 0, 0.15);
+    color: var(--mv-orange-light);
+}
+
+.dropdown-mitoverso .dropdown-divider {
+    border-color: rgba(255, 127, 0, 0.2);
+}

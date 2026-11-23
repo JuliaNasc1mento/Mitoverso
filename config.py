@@ -7,7 +7,7 @@ from urllib.parse import quote_plus
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
-SQLITE_DATABASE_PATH = BASE_DIR / "instance" / "app.sqlite3"
+SQLITE_DATABASE_PATH = BASE_DIR / "instance" / "mitoverso.db"
 
 class Config:
     SECRET_KEY = os.environ.get(

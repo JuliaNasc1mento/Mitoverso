@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block titulo %} Mitoverso | Quiz {{ info.nome }} {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+<div class="container py-5">
+    <div class="forum-coluna nivel-{{ nivel }}">
+
+        <a href="{{ url_for('quiz.index') }}" class="acao d-inline-block mb-3"><i class="bi bi-arrow-left me-1"></i> Voltar</a>
+
+        <h1 class="h3 fw-bold mb-1">
+            <i class="bi {{ info.icone }} quiz-nivel-icone me-1"></i> Nível {{ info.nome }}
+        </h1>
+        <p class="text-mv-muted mb-4">Cada acerto vale {{ info.pontos }} pontos. Responda todas as perguntas para enviar.</p>
+
+        <form action="{{ url_for('quiz.enviar', nivel=nivel) }}" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            {% for p in perguntas %}
+                <div class="painel p-4 mb-3">
+                    <p class="fw-bold mb-3"><span class="quiz-numero">{{ loop.index }}</span> {{ p.enunciado }}</p>
+
+                    {% for letra, texto in p.opcoes() %}
+                        <label class="opcao-quiz">
+                            <input type="radio" name="pergunta_{{ p.id }}" value="{{ letra }}" required>
+                            <span><strong>{{ letra }})</strong> {{ texto }}</span>
+                        </label>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="btn btn-mitoverso rounded-pill px-5 py-2 w-100">Enviar respostas</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

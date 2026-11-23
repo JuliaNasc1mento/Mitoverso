@@ -6,6 +6,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask_login import LoginManager
 from config import Config
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 csrf = CSRFProtect()
@@ -110,3 +111,7 @@ def titas():
 
 # Modelos
 from app import models
+
+#Quiz
+from app.routes.quiz import quiz_bp
+app.register_blueprint(quiz_bp)

@@ -9,8 +9,7 @@ from app.services.post_service import (
     criar_post,
     excluir_post,
     alternar_curtida,
-    listar_feed,
-    listar_feed_seguindo
+    listar_feed
 )
 
 posts_bp = Blueprint("posts", __name__)
@@ -25,16 +24,10 @@ def _flash_erros(form):
 # Página do fórum (feed)
 @posts_bp.route("/posts")
 def feed():
-    aba = request.args.get("aba", "todos")
     pagina = request.args.get("pagina", 1, type = int)
+    paginacao = listar_feed(pagina)
 
-    if aba == "seguindo" and current_user.is_authenticated:
-        paginacao = listar_feed_seguindo(current_user, pagina)
-    else:
-        aba = "todos"
-        paginacao = listar_feed(pagina)
-
-    return render_template("usuario/post.html", form = PostForm(), paginacao = paginacao, aba = aba)
+    return render_template("usuario/post.html", form = PostForm(), paginacao = paginacao)
 
 
 # Página de um post com as respostas

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block titulo %} Mitoverso | Ranking {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+<div class="container py-5">
+    <div class="forum-coluna">
+
+        <a href="{{ url_for('quiz.index') }}" class="acao d-inline-block mb-3"><i class="bi bi-arrow-left me-1"></i> Voltar ao quiz</a>
+
+        <h1 class="h3 fw-bold text-orange mb-1">Ranking</h1>
+        <p class="text-mv-muted mb-4">
+            Soma da melhor pontuação de cada nível. Máximo possível: {{ pontos_maximos }} pontos.
+        </p>
+
+        {% if minha_posicao %}
+            <div class="painel p-3 mb-4 text-center">
+                Sua posição: <strong class="text-orange">{{ minha_posicao }}º</strong> com <strong>{{ meus_pontos }}</strong> pontos
+            </div>
+        {% endif %}
+
+        <div class="painel lista-posts">
+            {% for usuario, pontos, niveis in top %}
+                <div class="rank-linha {{ 'eu' if current_user.is_authenticated and usuario.id == current_user.id }}">
+                    <span class="rank-pos pos-{{ loop.index }}">
+                        {% if loop.index <= 3 %}<i class="bi bi-trophy-fill"></i>{% else %}{{ loop.index }}º{% endif %}
+                    </span>
+
+                    <span class="avatar-inicial avatar-pequeno">{{ usuario.nome[0]|upper }}</span>
+
+                    <div class="flex-grow-1 min-w-0">
+                        <a href="{{ url_for('perfil.ver_perfil', id_usuario=usuario.id) }}" class="post-autor text-truncate d-block">{{ usuario.nome }}</a>
+                        <small class="text-mv-muted">{{ niveis }}/{{ total_niveis }} níveis jogados</small>
+                    </div>
+
+                    <strong class="rank-pontos">{{ pontos }} <small class="text-mv-muted fw-normal">pts</small></strong>
+                </div>
+            {% else %}
+                <p class="text-mv-muted text-center p-5 mb-0">Ninguém pontuou ainda. Seja o primeiro!</p>
+            {% endfor %}
+        </div>
+
+        {% if minha_posicao and minha_posicao > limite %}
+            <p class="text-mv-muted small text-center mt-3 mb-0">Mostrando os {{ limite }} primeiros colocados.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

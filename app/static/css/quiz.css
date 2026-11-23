@@ -1,0 +1,134 @@
+/* Quiz e ranking (usa as variáveis de cab_rod_index.css e as classes de forum.css) */
+
+/* Cor de cada nível */
+.nivel-1{ --cor-nivel:#2ecc71; }
+.nivel-2{ --cor-nivel:#f1c40f; }
+.nivel-3{ --cor-nivel:var(--mv-orange-main); }
+.nivel-4{ --cor-nivel:#e74c3c; }
+
+/* ---------- Cards de nível ---------- */
+.quiz-nivel{
+    border-top:4px solid var(--cor-nivel);
+    transition:transform .2s, box-shadow .2s;
+}
+
+.quiz-nivel:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(255,127,0,.15);
+}
+
+.quiz-nivel-icone{
+    font-size:2rem;
+    color:var(--cor-nivel);
+}
+
+/* ---------- Pergunta e alternativas ---------- */
+.quiz-numero{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:1.8rem;
+    height:1.8rem;
+    margin-right:.4rem;
+    border-radius:50%;
+    background:var(--cor-nivel, var(--mv-orange-main));
+    color:#1a0528;
+    font-size:.9rem;
+}
+
+.opcao-quiz{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    padding:.7rem 1rem;
+    margin-bottom:.5rem;
+    border:1px solid rgba(255,127,0,.2);
+    border-radius:.75rem;
+    cursor:pointer;
+    transition:border-color .2s, background .2s;
+}
+
+.opcao-quiz:last-child{
+    margin-bottom:0;
+}
+
+.opcao-quiz:hover{
+    border-color:var(--mv-orange-main);
+}
+
+.opcao-quiz:has(input:checked){
+    border-color:var(--mv-orange-main);
+    background:rgba(255,127,0,.12);
+}
+
+.opcao-quiz input{
+    accent-color:var(--mv-orange-main);
+}
+
+/* ---------- Resultado ---------- */
+.quiz-placar{
+    font-size:2.5rem;
+    font-weight:800;
+}
+
+.opcao-quiz.revisao{
+    cursor:default;
+}
+
+.opcao-quiz.revisao:hover{
+    border-color:rgba(255,127,0,.2);
+}
+
+.opcao-quiz.revisao.certa{
+    border-color:#2ecc71;
+    background:rgba(46,204,113,.12);
+}
+
+.opcao-quiz.revisao.errada{
+    border-color:#ff4d6d;
+    background:rgba(255,77,109,.12);
+}
+
+/* ---------- Ranking ---------- */
+.rank-linha{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:.9rem 1.25rem;
+    border-bottom:1px solid rgba(255,127,0,.12);
+}
+
+.rank-linha:last-child{
+    border-bottom:none;
+}
+
+.rank-linha.eu{
+    background:rgba(255,127,0,.1);
+}
+
+.rank-pos{
+    width:2.2rem;
+    flex-shrink:0;
+    text-align:center;
+    font-weight:700;
+    color:var(--mv-text-muted);
+}
+
+.rank-pos.pos-1{ color:#ffd700; }
+.rank-pos.pos-2{ color:#c0c0c0; }
+.rank-pos.pos-3{ color:#cd7f32; }
+
+.avatar-pequeno{
+    width:38px;
+    height:38px;
+    font-size:.95rem;
+}
+
+.rank-pontos{
+    font-size:1.1rem;
+    white-space:nowrap;
+}
+
+.min-w-0{
+    min-width:0;
+}

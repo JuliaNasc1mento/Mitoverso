@@ -43,16 +43,6 @@ def listar_feed(pagina):
     return _paginar(consulta, pagina)
 
 
-def listar_feed_seguindo(usuario, pagina):
-    ids = [u.id for u in usuario.seguindo] + [usuario.id]
-    consulta = (
-        db.select(Post)
-        .where(Post.id_pai.is_(None), Post.id_usuario.in_(ids))
-        .order_by(Post.criado_em.desc())
-    )
-    return _paginar(consulta, pagina)
-
-
 def listar_posts_do_usuario(usuario, aba, pagina):
     if aba == "respostas":
         consulta = (

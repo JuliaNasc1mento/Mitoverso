@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block titulo %} Mitoverso | Quiz {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+<div class="container py-5">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+            <h1 class="h3 fw-bold text-orange mb-1">Quiz</h1>
+            <p class="text-mv-muted mb-0">Teste o que você sabe sobre mitologia grega, do nível fácil ao lendário.</p>
+        </div>
+        <a href="{{ url_for('quiz.ranking') }}" class="btn btn-outline-mitoverso rounded-pill px-4">
+            <i class="bi bi-trophy me-1"></i> Ranking
+        </a>
+    </div>
+
+    {% include 'usuario/_flash.html' %}
+
+    <div class="row g-4">
+        {% for nivel, info in niveis.items() %}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="painel quiz-nivel nivel-{{ nivel }} p-4 h-100 d-flex flex-column">
+                    <i class="bi {{ info.icone }} quiz-nivel-icone"></i>
+                    <h2 class="h5 fw-bold mt-2 mb-1">{{ info.nome }}</h2>
+                    <p class="text-mv-muted small mb-3">{{ questoes }} perguntas · {{ info.pontos }} pts por acerto</p>
+
+                    {% if current_user.is_authenticated %}
+                        {% set melhor = melhores.get(nivel) %}
+                        <p class="small mb-3">
+                            {% if melhor is not none %}
+                                Seu melhor: <strong>{{ melhor }}</strong> / {{ questoes * info.pontos }} pts
+                            {% else %}
+                                <span class="text-mv-muted">Você ainda não jogou este nível.</span>
+                            {% endif %}
+                        </p>
+                        <a href="{{ url_for('quiz.jogar', nivel=nivel) }}" class="btn btn-mitoverso rounded-pill mt-auto">
+                            {{ 'Jogar de novo' if melhor is not none else 'Jogar' }}
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('autenticacao.login') }}" class="btn btn-outline-mitoverso rounded-pill mt-auto">Entrar para jogar</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <p class="text-mv-muted small text-center mt-4 mb-0">
+        No ranking conta a sua melhor pontuação em cada nível.
+    </p>
+</div>
+{% endblock %}

@@ -7,7 +7,7 @@ from app.models.usuario import Usuario
 from app.form.perfil_form import PerfilForm
 from app.routes.auxiliar import destino_seguro
 from app.services.post_service import listar_posts_do_usuario, contar_posts
-from app.services.usuario_service import alternar_seguir, atualizar_perfil
+from app.services.usuario_service import atualizar_perfil
 
 # Criação do Blueprint "perfil"
 perfil_bp = Blueprint("perfil", __name__)
@@ -53,15 +53,3 @@ def editar_perfil():
 
     return render_template("usuario/editar_perfil.html", form = form)
 
-
-@perfil_bp.route("/perfil/<int:id_usuario>/seguir", methods = ["POST"])
-@login_required
-def seguir(id_usuario):
-    alvo = db.get_or_404(Usuario, id_usuario)
-
-    if alvo.id == current_user.id:
-        flash("Você não pode seguir a si mesmo.", "warning")
-    else:
-        alternar_seguir(current_user, alvo)
-
-    return redirect(destino_seguro(url_for("perfil.ver_perfil", id_usuario = alvo.id)))
