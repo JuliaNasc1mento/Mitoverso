@@ -11,6 +11,8 @@
   color: #ff7f00;
   border-color: #ff7f00;
   transition: all 0.2s ease;
+  float: right;
+  margin: 20px;
 }
 
 .btn-outline-orange:hover {

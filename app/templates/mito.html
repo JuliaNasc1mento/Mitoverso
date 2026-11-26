@@ -5,8 +5,6 @@
 {% block conteudo %}
 <main class="bg-mitoverso-dark py-5">
     <div class="container">
-        <!-- Botão Voltar -->
-        <a href="{{ url_for('principal') }}" class="btn btn-outline-orange mb-4 d-inline-flex align-items-center gap-2">Voltar ao acervo</a>
 
         <!-- Card Principal do Mito -->
         <article class="card bg-mitoverso-card text-white border-purple shadow-lg overflow-hidden">
@@ -77,6 +75,9 @@
                     <div class="text-white fs-6 lh-lg pe-lg-3 text">
                         {{ mito.conteudo }}
                     </div>
+
+                    <!-- Botão Voltar -->
+                    <a href="{{ url_for('principal') }}" class="btn btn-outline-orange mb-4 d-inline-flex align-items-center">Voltar ao acervo</a>
                 </section>
             </div>
         </article>
