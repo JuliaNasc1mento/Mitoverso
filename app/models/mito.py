@@ -9,3 +9,4 @@ class Mito(db.Model):
     conteudo = db.Column(db.Text, nullable = False)
     imagem = db.Column(db.String(255))
     audio = db.Column(db.String(255))
+    acessos = db.Column(db.Integer, default = 0, nullable = False)
